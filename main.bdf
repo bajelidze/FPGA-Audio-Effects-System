@@ -419,43 +419,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 448 424 712 536)
-	(text "serializer" (rect 5 0 47 12)(font "Arial" ))
-	(text "inst4" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "ADCDAT_PAR[31..0]" (rect 0 0 105 12)(font "Arial" ))
-		(text "ADCDAT_PAR[31..0]" (rect 21 27 126 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 264 64)
-		(output)
-		(text "DACDAT_SER" (rect 0 0 73 12)(font "Arial" ))
-		(text "DACDAT_SER" (rect 182 59 243 71)(font "Arial" ))
-		(line (pt 264 64)(pt 248 64))
-	)
-	(port
-		(pt 264 32)
-		(bidir)
-		(text "BCLK" (rect 0 0 28 12)(font "Arial" ))
-		(text "BCLK" (rect 218 27 246 39)(font "Arial" ))
-		(line (pt 264 32)(pt 248 32))
-	)
-	(port
-		(pt 264 48)
-		(bidir)
-		(text "DACLRCK" (rect 0 0 53 12)(font "Arial" ))
-		(text "DACLRCK" (rect 193 43 246 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48))
-	)
-	(drawing
-		(rectangle (rect 16 16 248 96))
-	)
-)
-(symbol
-	(rect 8 424 248 536)
+	(rect 8 424 224 536)
 	(text "deserializer" (rect 5 0 59 12)(font "Arial" ))
 	(text "inst1" (rect 8 96 31 108)(font "Arial" ))
 	(port
@@ -466,11 +430,61 @@ refer to the applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
+		(pt 216 64)
+		(output)
+		(text "leftSample[15..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "leftSample[15..0]" (rect 124 59 195 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 3))
+	)
+	(port
+		(pt 216 80)
+		(output)
+		(text "rightSample[15..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "rightSample[15..0]" (rect 120 75 195 87)(font "Arial" ))
+		(line (pt 216 80)(pt 200 80)(line_width 3))
+	)
+	(port
+		(pt 216 32)
+		(bidir)
+		(text "BCLK" (rect 0 0 28 12)(font "Arial" ))
+		(text "BCLK" (rect 170 27 198 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32))
+	)
+	(port
+		(pt 216 48)
+		(bidir)
+		(text "ADCLRCK" (rect 0 0 53 12)(font "Arial" ))
+		(text "ADCLRCK" (rect 145 43 198 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
+	)
+)
+(symbol
+	(rect 448 424 688 536)
+	(text "serializer" (rect 5 0 47 12)(font "Arial" ))
+	(text "inst4" (rect 8 96 31 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "leftSample[15..0]" (rect 0 0 84 12)(font "Arial" ))
+		(text "leftSample[15..0]" (rect 21 27 105 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rightSample[15..0]" (rect 0 0 89 12)(font "Arial" ))
+		(text "rightSample[15..0]" (rect 21 43 110 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
 		(pt 240 64)
 		(output)
-		(text "ADCDAT_PAR[31..0]" (rect 0 0 105 12)(font "Arial" ))
-		(text "ADCDAT_PAR[31..0]" (rect 131 59 219 71)(font "Arial" ))
-		(line (pt 240 64)(pt 224 64)(line_width 3))
+		(text "DACDAT_SER" (rect 0 0 73 12)(font "Arial" ))
+		(text "DACDAT_SER" (rect 158 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64))
 	)
 	(port
 		(pt 240 32)
@@ -482,8 +496,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 240 48)
 		(bidir)
-		(text "ADCLRCK" (rect 0 0 53 12)(font "Arial" ))
-		(text "ADCLRCK" (rect 169 43 222 55)(font "Arial" ))
+		(text "DACLRCK" (rect 0 0 53 12)(font "Arial" ))
+		(text "DACLRCK" (rect 169 43 222 55)(font "Arial" ))
 		(line (pt 240 48)(pt 224 48))
 	)
 	(drawing
@@ -572,11 +586,6 @@ refer to the applicable agreement for further details.
 	(pt 208 136)
 )
 (connector
-	(pt 248 488)
-	(pt 440 488)
-	(bus)
-)
-(connector
 	(pt 440 488)
 	(pt 440 456)
 	(bus)
@@ -599,7 +608,39 @@ refer to the applicable agreement for further details.
 	(pt 720 456)
 )
 (connector
-	(pt 712 456)
+	(pt 248 456)
+	(pt 224 456)
+)
+(connector
+	(pt 248 472)
+	(pt 224 472)
+)
+(connector
+	(pt 712 488)
+	(pt 688 488)
+)
+(connector
+	(pt 712 472)
+	(pt 688 472)
+)
+(connector
+	(pt 688 456)
 	(pt 720 456)
 )
+(connector
+	(pt 224 488)
+	(pt 440 488)
+	(bus)
+)
+(connector
+	(pt 224 504)
+	(pt 448 504)
+	(bus)
+)
+(connector
+	(pt 448 504)
+	(pt 448 472)
+	(bus)
+)
 (junction (pt 416 120))
+(junction (pt 248 456))
