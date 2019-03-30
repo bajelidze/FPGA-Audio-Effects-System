@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "symbol" (version "1.1"))
 (symbol
-	(rect 16 16 264 128)
+	(rect 16 16 256 128)
 	(text "deserializer" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst" (rect 8 96 20 108)(font "Arial" ))
 	(port
@@ -31,27 +31,27 @@ refer to the applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32)(line_width 1))
 	)
 	(port
-		(pt 0 48)
-		(input)
-		(text "BCLK" (rect 0 0 25 12)(font "Arial" ))
-		(text "BCLK" (rect 21 43 46 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 1))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "ADCLRCK" (rect 0 0 50 12)(font "Arial" ))
-		(text "ADCLRCK" (rect 21 59 71 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
-	)
-	(port
-		(pt 248 32)
+		(pt 240 64)
 		(output)
 		(text "ADCDAT_PAR[31..0]" (rect 0 0 95 12)(font "Arial" ))
-		(text "ADCDAT_PAR[31..0]" (rect 132 27 227 39)(font "Arial" ))
-		(line (pt 248 32)(pt 232 32)(line_width 3))
+		(text "ADCDAT_PAR[31..0]" (rect 124 59 219 71)(font "Arial" ))
+		(line (pt 240 64)(pt 224 64)(line_width 3))
+	)
+	(port
+		(pt 240 32)
+		(bidir)
+		(text "BCLK" (rect 0 0 25 12)(font "Arial" ))
+		(text "BCLK" (rect 194 27 219 39)(font "Arial" ))
+		(line (pt 240 32)(pt 224 32)(line_width 1))
+	)
+	(port
+		(pt 240 48)
+		(bidir)
+		(text "ADCLRCK" (rect 0 0 50 12)(font "Arial" ))
+		(text "ADCLRCK" (rect 169 43 219 55)(font "Arial" ))
+		(line (pt 240 48)(pt 224 48)(line_width 1))
 	)
 	(drawing
-		(rectangle (rect 16 16 232 96)(line_width 1))
+		(rectangle (rect 16 16 224 96)(line_width 1))
 	)
 )
