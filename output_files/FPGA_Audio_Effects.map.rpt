@@ -1,5 +1,5 @@
 Analysis & Synthesis report for FPGA_Audio_Effects
-Sat Mar 30 15:00:07 2019
+Sat Mar 30 15:55:09 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -46,14 +46,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Sat Mar 30 15:00:07 2019       ;
+; Analysis & Synthesis Status     ; Successful - Sat Mar 30 15:55:09 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; FPGA_Audio_Effects                          ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Logic utilization (in ALMs)     ; N/A                                         ;
-; Total registers                 ; 74                                          ;
-; Total pins                      ; 9                                           ;
+; Total registers                 ; 158                                         ;
+; Total pins                      ; 12                                          ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0                                           ;
 ; Total DSP Blocks                ; 0                                           ;
@@ -170,55 +170,59 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                            ; Library ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
-; main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/main.bdf             ;         ;
-; modules/i2c.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/i2c.sv       ;         ;
-; modules/CLOCK_500.sv             ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/CLOCK_500.sv ;         ;
-; modules/keytr.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/keytr.sv     ;         ;
-+----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------+---------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                               ; Library ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
+; modules/serializer.sv            ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv   ;         ;
+; modules/deserializer.sv          ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/deserializer.sv ;         ;
+; main.bdf                         ; yes             ; User Block Diagram/Schematic File  ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/main.bdf                ;         ;
+; modules/i2c.sv                   ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/i2c.sv          ;         ;
+; modules/CLOCK_500.sv             ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/CLOCK_500.sv    ;         ;
+; modules/keytr.sv                 ; yes             ; User SystemVerilog HDL File        ; C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/keytr.sv        ;         ;
++----------------------------------+-----------------+------------------------------------+----------------------------------------------------------------------------+---------+
 
 
-+-----------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                 ;
-+---------------------------------------------+-------------------------------+
-; Resource                                    ; Usage                         ;
-+---------------------------------------------+-------------------------------+
-; Estimate of Logic utilization (ALMs needed) ; 51                            ;
-;                                             ;                               ;
-; Combinational ALUT usage for logic          ; 84                            ;
-;     -- 7 input functions                    ; 1                             ;
-;     -- 6 input functions                    ; 14                            ;
-;     -- 5 input functions                    ; 10                            ;
-;     -- 4 input functions                    ; 21                            ;
-;     -- <=3 input functions                  ; 38                            ;
-;                                             ;                               ;
-; Dedicated logic registers                   ; 74                            ;
-;                                             ;                               ;
-; I/O pins                                    ; 9                             ;
-;                                             ;                               ;
-; Total DSP Blocks                            ; 0                             ;
-;                                             ;                               ;
-; Maximum fan-out node                        ; CLOCK_500:inst|COUNTER_500[9] ;
-; Maximum fan-out                             ; 45                            ;
-; Total fan-out                               ; 513                           ;
-; Average fan-out                             ; 2.90                          ;
-+---------------------------------------------+-------------------------------+
++--------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                  ;
++---------------------------------------------+----------------+
+; Resource                                    ; Usage          ;
++---------------------------------------------+----------------+
+; Estimate of Logic utilization (ALMs needed) ; 115            ;
+;                                             ;                ;
+; Combinational ALUT usage for logic          ; 184            ;
+;     -- 7 input functions                    ; 8              ;
+;     -- 6 input functions                    ; 17             ;
+;     -- 5 input functions                    ; 51             ;
+;     -- 4 input functions                    ; 28             ;
+;     -- <=3 input functions                  ; 80             ;
+;                                             ;                ;
+; Dedicated logic registers                   ; 158            ;
+;                                             ;                ;
+; I/O pins                                    ; 12             ;
+;                                             ;                ;
+; Total DSP Blocks                            ; 0              ;
+;                                             ;                ;
+; Maximum fan-out node                        ; AUD_BCLK~input ;
+; Maximum fan-out                             ; 84             ;
+; Total fan-out                               ; 1180           ;
+; Average fan-out                             ; 3.19           ;
++---------------------------------------------+----------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                     ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
-; |main                      ; 84 (0)              ; 74 (0)                    ; 0                 ; 0          ; 9    ; 0            ; |main                ; main        ; work         ;
-;    |CLOCK_500:inst|        ; 32 (32)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |main|CLOCK_500:inst ; CLOCK_500   ; work         ;
-;    |i2c:inst2|             ; 29 (29)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |main|i2c:inst2      ; i2c         ; work         ;
-;    |keytr:inst3|           ; 23 (23)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |main|keytr:inst3    ; keytr       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------+-------------+--------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                          ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+--------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name      ; Entity Name  ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+--------------+--------------+
+; |main                      ; 184 (0)             ; 158 (0)                   ; 0                 ; 0          ; 12   ; 0            ; |main                    ; main         ; work         ;
+;    |CLOCK_500:inst|        ; 32 (32)             ; 31 (31)                   ; 0                 ; 0          ; 0    ; 0            ; |main|CLOCK_500:inst     ; CLOCK_500    ; work         ;
+;    |deserializer:inst1|    ; 73 (73)             ; 70 (70)                   ; 0                 ; 0          ; 0    ; 0            ; |main|deserializer:inst1 ; deserializer ; work         ;
+;    |i2c:inst2|             ; 30 (30)             ; 20 (20)                   ; 0                 ; 0          ; 0    ; 0            ; |main|i2c:inst2          ; i2c          ; work         ;
+;    |keytr:inst3|           ; 23 (23)             ; 23 (23)                   ; 0                 ; 0          ; 0    ; 0            ; |main|keytr:inst3        ; keytr        ; work         ;
+;    |serializer:inst4|      ; 26 (26)             ; 14 (14)                   ; 0                 ; 0          ; 0    ; 0            ; |main|serializer:inst4   ; serializer   ; work         ;
++----------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+--------------------------+--------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -233,8 +237,10 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c:inst2|SD[19]                       ; Stuck at GND due to stuck port data_in ;
 ; i2c:inst2|SD[18]                       ; Stuck at VCC due to stuck port data_in ;
 ; i2c:inst2|SD[7,8,13..17]               ; Stuck at GND due to stuck port data_in ;
+; serializer:inst4|i[5]                  ; Lost fanout                            ;
 ; CLOCK_500:inst|address[4,5]            ; Stuck at GND due to stuck port data_in ;
-; Total Number of Removed Registers = 20 ;                                        ;
+; deserializer:inst1|i[5]                ; Stuck at GND due to stuck port data_in ;
+; Total Number of Removed Registers = 22 ;                                        ;
 +----------------------------------------+----------------------------------------+
 
 
@@ -263,12 +269,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 74    ;
+; Total registers                              ; 158   ;
 ; Number of registers using Synchronous Clear  ; 18    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 14    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 15    ;
+; Number of registers using Clock Enable       ; 89    ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -283,12 +289,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; i2c:inst2|SD_COUNTER[4]                 ; 12      ;
 ; i2c:inst2|SD_COUNTER[3]                 ; 16      ;
 ; i2c:inst2|SD_COUNTER[2]                 ; 14      ;
-; i2c:inst2|SD_COUNTER[1]                 ; 14      ;
-; i2c:inst2|SD_COUNTER[0]                 ; 19      ;
+; i2c:inst2|SD_COUNTER[1]                 ; 15      ;
+; i2c:inst2|SD_COUNTER[0]                 ; 20      ;
 ; i2c:inst2|END                           ; 22      ;
+; serializer:inst4|i[3]                   ; 3       ;
+; serializer:inst4|i[4]                   ; 2       ;
+; serializer:inst4|i[2]                   ; 11      ;
+; serializer:inst4|i[1]                   ; 12      ;
+; serializer:inst4|i[0]                   ; 9       ;
 ; i2c:inst2|SDO                           ; 2       ;
+; deserializer:inst1|i[0]                 ; 37      ;
+; deserializer:inst1|i[1]                 ; 36      ;
+; deserializer:inst1|i[2]                 ; 35      ;
+; deserializer:inst1|i[3]                 ; 34      ;
+; deserializer:inst1|i[4]                 ; 36      ;
 ; keytr:inst3|flag                        ; 6       ;
-; Total number of inverted registers = 10 ;         ;
+; Total number of inverted registers = 20 ;         ;
 +-----------------------------------------+---------+
 
 
@@ -298,7 +314,9 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 ; 16:1               ; 3 bits    ; 30 LEs        ; 18 LEs               ; 12 LEs                 ; Yes        ; |main|CLOCK_500:inst|DATA_A[4] ;
-; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|i2c:inst2|SD_COUNTER[5]  ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |main|i2c:inst2|SD_COUNTER[0]  ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|serializer:inst4|i[2]    ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |main|deserializer:inst1|i[0]  ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------+
 
 
@@ -307,29 +325,29 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 74                          ;
+; arriav_ff             ; 158                         ;
 ;     CLR               ; 14                          ;
-;     ENA               ; 15                          ;
+;     ENA               ; 89                          ;
 ;     SCLR              ; 18                          ;
-;     plain             ; 27                          ;
-; arriav_io_obuf        ; 1                           ;
-; arriav_lcell_comb     ; 84                          ;
+;     plain             ; 37                          ;
+; arriav_io_obuf        ; 4                           ;
+; arriav_lcell_comb     ; 184                         ;
 ;     arith             ; 26                          ;
 ;         1 data inputs ; 25                          ;
 ;         2 data inputs ; 1                           ;
-;     extend            ; 1                           ;
-;         7 data inputs ; 1                           ;
-;     normal            ; 57                          ;
-;         1 data inputs ; 3                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 7                           ;
-;         4 data inputs ; 21                          ;
-;         5 data inputs ; 10                          ;
-;         6 data inputs ; 14                          ;
-; boundary_port         ; 9                           ;
+;     extend            ; 8                           ;
+;         7 data inputs ; 8                           ;
+;     normal            ; 150                         ;
+;         1 data inputs ; 5                           ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 44                          ;
+;         4 data inputs ; 28                          ;
+;         5 data inputs ; 51                          ;
+;         6 data inputs ; 17                          ;
+; boundary_port         ; 12                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 3.00                        ;
-; Average LUT depth     ; 1.75                        ;
+; Average LUT depth     ; 1.82                        ;
 +-----------------------+-----------------------------+
 
 
@@ -348,10 +366,14 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
-    Info: Processing started: Sat Mar 30 14:59:42 2019
+    Info: Processing started: Sat Mar 30 15:54:50 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off FPGA_Audio_Effects -c FPGA_Audio_Effects
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file modules/serializer.sv
+    Info (12023): Found entity 1: serializer File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file modules/deserializer.sv
+    Info (12023): Found entity 1: deserializer File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/deserializer.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file main.bdf
     Info (12023): Found entity 1: main
 Info (12021): Found 1 design units, including 1 entities, in source file modules/i2c.sv
@@ -376,18 +398,31 @@ Info (12128): Elaborating entity "keytr" for hierarchy "keytr:inst3"
 Warning (10230): Verilog HDL assignment warning at keytr.sv(36): truncated value with size 32 to match size of target (16) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/keytr.sv Line: 36
 Warning (10034): Output port "counter" at keytr.sv(8) has no driver File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/keytr.sv Line: 8
 Warning (10034): Output port "ON" at keytr.sv(4) has no driver File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/keytr.sv Line: 4
+Info (12128): Elaborating entity "serializer" for hierarchy "serializer:inst4"
+Warning (10230): Verilog HDL assignment warning at serializer.sv(17): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv Line: 17
+Warning (10230): Verilog HDL assignment warning at serializer.sv(27): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv Line: 27
+Warning (10230): Verilog HDL assignment warning at serializer.sv(38): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv Line: 38
+Warning (10230): Verilog HDL assignment warning at serializer.sv(46): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/serializer.sv Line: 46
+Info (12128): Elaborating entity "deserializer" for hierarchy "deserializer:inst1"
+Warning (10230): Verilog HDL assignment warning at deserializer.sv(13): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/deserializer.sv Line: 13
+Warning (10230): Verilog HDL assignment warning at deserializer.sv(18): truncated value with size 32 to match size of target (6) File: C:/Users/Windows/Desktop/FPGA-Audio-Effects-System/modules/deserializer.sv Line: 18
+Warning (13039): The following bidirectional pins have no drivers
+    Warning (13040): bidirectional pin "AUD_BCLK" has no driver
+    Warning (13040): bidirectional pin "AUD_DACLRCK" has no driver
+    Warning (13040): bidirectional pin "AUD_ADCLRCK" has no driver
 Info (286030): Timing-Driven Synthesis is running
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 109 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 276 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 5 input pins
     Info (21059): Implemented 3 output pins
-    Info (21060): Implemented 1 bidirectional pins
-    Info (21061): Implemented 100 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 13 warnings
-    Info: Peak virtual memory: 4838 megabytes
-    Info: Processing ended: Sat Mar 30 15:00:07 2019
-    Info: Elapsed time: 00:00:25
-    Info: Total CPU time (on all processors): 00:00:47
+    Info (21060): Implemented 4 bidirectional pins
+    Info (21061): Implemented 264 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 23 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Sat Mar 30 15:55:09 2019
+    Info: Elapsed time: 00:00:19
+    Info: Total CPU time (on all processors): 00:00:44
 
 

@@ -20,7 +20,15 @@
 					"strict" : false
 				},
 				{
-					"name" : "AUD_ADCDAT",
+					"name" : "AUD_BCLK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_DACLRCK",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCLRCK",
 					"strict" : false
 				},
 				{
@@ -29,6 +37,10 @@
 				},
 				{
 					"name" : "pin_name1",
+					"strict" : false
+				},
+				{
+					"name" : "AUD_ADCDAT",
 					"strict" : false
 				},
 				{

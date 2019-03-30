@@ -1,5 +1,5 @@
 Flow report for FPGA_Audio_Effects
-Sat Mar 30 15:01:42 2019
+Sat Mar 30 15:56:47 2019
 Quartus Prime Version 18.1.0 Build 625 09/12/2018 SJ Lite Edition
 
 
@@ -40,16 +40,16 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Flow Summary                                                                  ;
 +---------------------------------+---------------------------------------------+
-; Flow Status                     ; Successful - Sat Mar 30 15:01:32 2019       ;
+; Flow Status                     ; Successful - Sat Mar 30 15:56:36 2019       ;
 ; Quartus Prime Version           ; 18.1.0 Build 625 09/12/2018 SJ Lite Edition ;
 ; Revision Name                   ; FPGA_Audio_Effects                          ;
 ; Top-level Entity Name           ; main                                        ;
 ; Family                          ; Cyclone V                                   ;
 ; Device                          ; 5CSEMA5F31C6                                ;
 ; Timing Models                   ; Final                                       ;
-; Logic utilization (in ALMs)     ; 49 / 32,070 ( < 1 % )                       ;
-; Total registers                 ; 81                                          ;
-; Total pins                      ; 9 / 457 ( 2 % )                             ;
+; Logic utilization (in ALMs)     ; 105 / 32,070 ( < 1 % )                      ;
+; Total registers                 ; 170                                         ;
+; Total pins                      ; 12 / 457 ( 3 % )                            ;
 ; Total virtual pins              ; 0                                           ;
 ; Total block memory bits         ; 0 / 4,065,280 ( 0 % )                       ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                              ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 03/30/2019 14:59:44 ;
+; Start date & time ; 03/30/2019 15:54:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; FPGA_Audio_Effects  ;
 +-------------------+---------------------+
@@ -78,12 +78,14 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+--------------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value      ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+--------------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 62001001303764.155394358306980         ; --                 ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 62001001303764.155394689007052         ; --                 ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --                 ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --                 ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --                 ; main        ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --                 ; main        ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --                 ; main        ; Top        ;
+; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --                 ; --          ; --         ;
+; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --                 ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --                 ; --          ; --         ;
 ; TOP_LEVEL_ENTITY                    ; main                                   ; FPGA_Audio_Effects ; --          ; --         ;
 +-------------------------------------+----------------------------------------+--------------------+-------------+------------+
@@ -94,11 +96,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:25     ; 1.0                     ; 4827 MB             ; 00:00:47                           ;
-; Fitter               ; 00:01:08     ; 1.0                     ; 6281 MB             ; 00:01:38                           ;
-; Assembler            ; 00:00:13     ; 1.0                     ; 4851 MB             ; 00:00:11                           ;
-; Timing Analyzer      ; 00:00:09     ; 1.1                     ; 5130 MB             ; 00:00:09                           ;
-; Total                ; 00:01:55     ; --                      ; --                  ; 00:02:45                           ;
+; Analysis & Synthesis ; 00:00:19     ; 1.0                     ; 4818 MB             ; 00:00:44                           ;
+; Fitter               ; 00:01:08     ; 1.0                     ; 6289 MB             ; 00:01:47                           ;
+; Assembler            ; 00:00:14     ; 1.0                     ; 4850 MB             ; 00:00:12                           ;
+; Timing Analyzer      ; 00:00:10     ; 1.1                     ; 5131 MB             ; 00:00:09                           ;
+; Total                ; 00:01:51     ; --                      ; --                  ; 00:02:52                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
