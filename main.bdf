@@ -20,7 +20,7 @@ refer to the applicable agreement for further details.
 */
 (header "graphic" (version "1.4"))
 (symbol
-	(rect 208 72 400 184)
+	(rect 208 88 400 200)
 	(text "CLOCK_500" (rect 5 0 66 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
 	(port
@@ -162,7 +162,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 248 200 416 312)
+	(rect 304 224 472 336)
 	(text "keytr" (rect 5 0 30 12)(font "Arial" ))
 	(text "inst3" (rect 8 96 30 113)(font "Intel Clear" ))
 	(port
