@@ -3,8 +3,8 @@ module serializer(
 	inout BCLK,
 	inout DACLRCK,
 	output DACDAT_SER,
-	input [15:0] leftSample,
-	input [15:0] rightSample
+	input signed [15:0] leftSample,
+	input signed [15:0] rightSample
 	);
 
 logic flag = 0;

@@ -3,8 +3,8 @@ module deserializer(
 	inout BCLK,
 	inout ADCLRCK,
 //	output [31:0] ADCDAT_PAR,
-	output [15:0] leftSample,
-	output [15:0] rightSample
+	output signed [15:0] leftSample,
+	output signed [15:0] rightSample
 	);
 	
 logic start = 0;
