@@ -21,7 +21,7 @@ refer to the applicable agreement for further details.
 (header "graphic" (version "1.4"))
 (pin
 	(input)
-	(rect 40 112 208 128)
+	(rect -464 344 -296 360)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "CLOCK_50" (rect 5 0 60 12)(font "Arial" ))
 	(pt 168 8)
@@ -34,7 +34,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -24 128 40 152))
+	(annotation_block (location)(rect -528 360 -464 384))
 )
 (pin
 	(input)
@@ -504,6 +504,56 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 224 96))
 	)
 )
+(symbol
+	(rect 200 592 464 704)
+	(text "echo" (rect 5 0 28 12)(font "Arial" ))
+	(text "inst5" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "Enable" (rect 0 0 33 12)(font "Arial" ))
+		(text "Enable" (rect 21 59 54 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLOCK_50" (rect 0 0 55 12)(font "Arial" ))
+		(text "CLOCK_50" (rect 21 75 76 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "leftSampleOut[15..0]" (rect 157 27 259 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "rightSampleOut[15..0]" (rect 153 43 260 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 96))
+	)
+)
 (connector
 	(pt 208 272)
 	(pt 224 272)
@@ -586,11 +636,6 @@ refer to the applicable agreement for further details.
 	(pt 208 136)
 )
 (connector
-	(pt 440 488)
-	(pt 440 456)
-	(bus)
-)
-(connector
 	(pt 440 456)
 	(pt 448 456)
 	(bus)
@@ -628,19 +673,110 @@ refer to the applicable agreement for further details.
 	(pt 720 456)
 )
 (connector
-	(pt 224 488)
-	(pt 440 488)
-	(bus)
-)
-(connector
 	(pt 224 504)
-	(pt 448 504)
+	(pt 224 576)
 	(bus)
 )
 (connector
-	(pt 448 504)
+	(pt 224 576)
+	(pt 192 576)
+	(bus)
+)
+(connector
+	(pt 192 576)
+	(pt 192 640)
+	(bus)
+)
+(connector
+	(pt 192 640)
+	(pt 200 640)
+	(bus)
+)
+(connector
+	(pt 184 568)
+	(pt 184 624)
+	(bus)
+)
+(connector
+	(pt 184 624)
+	(pt 200 624)
+	(bus)
+)
+(connector
+	(pt 224 488)
+	(pt 232 488)
+	(bus)
+)
+(connector
+	(pt 232 488)
+	(pt 232 568)
+	(bus)
+)
+(connector
+	(pt 184 568)
+	(pt 232 568)
+	(bus)
+)
+(connector
+	(pt -296 352)
+	(pt -280 352)
+)
+(connector
+	(pt -280 120)
+	(pt 208 120)
+)
+(connector
+	(pt -280 672)
+	(pt 200 672)
+)
+(connector
+	(pt -280 120)
+	(pt -280 352)
+)
+(connector
+	(pt -280 352)
+	(pt -280 672)
+)
+(connector
+	(pt 464 624)
+	(pt 480 624)
+	(bus)
+)
+(connector
+	(pt 480 624)
+	(pt 480 544)
+	(bus)
+)
+(connector
+	(pt 440 544)
+	(pt 440 456)
+	(bus)
+)
+(connector
+	(pt 440 544)
+	(pt 480 544)
+	(bus)
+)
+(connector
+	(pt 448 552)
 	(pt 448 472)
+	(bus)
+)
+(connector
+	(pt 448 552)
+	(pt 496 552)
+	(bus)
+)
+(connector
+	(pt 496 552)
+	(pt 496 640)
+	(bus)
+)
+(connector
+	(pt 496 640)
+	(pt 464 640)
 	(bus)
 )
 (junction (pt 416 120))
 (junction (pt 248 456))
+(junction (pt -280 352))

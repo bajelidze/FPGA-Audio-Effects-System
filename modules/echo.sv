@@ -1,4 +1,4 @@
-module delay(
+module echo(
 	input [15:0] leftSampleIn,
 	input [15:0] rightSampleIn,
 	output [15:0] leftSampleOut,
