@@ -40,7 +40,7 @@ always_ff @(negedge BCLK)begin
 			end
 		end
 		
-		if(start2 == 1)begin
+		if(start == 1)begin
 			if(i >= 16)begin
 				DACDAT_SER = leftSample[i - 16];
 				i = i - 1;

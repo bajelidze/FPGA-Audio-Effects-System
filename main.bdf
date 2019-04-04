@@ -433,14 +433,14 @@ refer to the applicable agreement for further details.
 		(pt 216 64)
 		(output)
 		(text "leftSample[15..0]" (rect 0 0 84 12)(font "Arial" ))
-		(text "leftSample[15..0]" (rect 124 59 195 71)(font "Arial" ))
+		(text "leftSample[15..0]" (rect 124 59 208 71)(font "Arial" ))
 		(line (pt 216 64)(pt 200 64)(line_width 3))
 	)
 	(port
 		(pt 216 80)
 		(output)
 		(text "rightSample[15..0]" (rect 0 0 89 12)(font "Arial" ))
-		(text "rightSample[15..0]" (rect 120 75 195 87)(font "Arial" ))
+		(text "rightSample[15..0]" (rect 120 75 209 87)(font "Arial" ))
 		(line (pt 216 80)(pt 200 80)(line_width 3))
 	)
 	(port
@@ -483,7 +483,7 @@ refer to the applicable agreement for further details.
 		(pt 240 64)
 		(output)
 		(text "DACDAT_SER" (rect 0 0 73 12)(font "Arial" ))
-		(text "DACDAT_SER" (rect 158 59 219 71)(font "Arial" ))
+		(text "DACDAT_SER" (rect 158 59 231 71)(font "Arial" ))
 		(line (pt 240 64)(pt 224 64))
 	)
 	(port
@@ -502,56 +502,6 @@ refer to the applicable agreement for further details.
 	)
 	(drawing
 		(rectangle (rect 16 16 224 96))
-	)
-)
-(symbol
-	(rect 208 592 472 704)
-	(text "distortion" (rect 5 0 49 12)(font "Arial" ))
-	(text "inst5" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "ADCLRCK" (rect 0 0 53 12)(font "Arial" ))
-		(text "ADCLRCK" (rect 21 59 74 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "threshold" (rect 0 0 44 12)(font "Arial" ))
-		(text "threshold" (rect 21 75 65 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 264 32)
-		(output)
-		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "leftSampleOut[15..0]" (rect 157 27 243 39)(font "Arial" ))
-		(line (pt 264 32)(pt 248 32)(line_width 3))
-	)
-	(port
-		(pt 264 48)
-		(output)
-		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "rightSampleOut[15..0]" (rect 153 43 243 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 248 96))
 	)
 )
 (connector
@@ -674,32 +624,12 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 224 576)
-	(pt 192 576)
-	(bus)
-)
-(connector
-	(pt 192 576)
-	(pt 192 640)
-	(bus)
-)
-(connector
-	(pt 184 568)
-	(pt 184 624)
-	(bus)
-)
-(connector
 	(pt 224 488)
 	(pt 232 488)
 	(bus)
 )
 (connector
 	(pt 232 488)
-	(pt 232 568)
-	(bus)
-)
-(connector
-	(pt 184 568)
 	(pt 232 568)
 	(bus)
 )
@@ -724,11 +654,6 @@ refer to the applicable agreement for further details.
 	(pt -280 672)
 )
 (connector
-	(pt 480 624)
-	(pt 480 544)
-	(bus)
-)
-(connector
 	(pt 440 544)
 	(pt 440 456)
 	(bus)
@@ -741,16 +666,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 448 552)
 	(pt 448 472)
-	(bus)
-)
-(connector
-	(pt 448 552)
-	(pt 496 552)
-	(bus)
-)
-(connector
-	(pt 496 552)
-	(pt 496 640)
 	(bus)
 )
 (connector
@@ -792,6 +707,31 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 248 472)
 	(pt 248 584)
+)
+(connector
+	(pt 224 576)
+	(pt 520 576)
+	(bus)
+)
+(connector
+	(pt 520 576)
+	(pt 520 552)
+	(bus)
+)
+(connector
+	(pt 520 552)
+	(pt 448 552)
+	(bus)
+)
+(connector
+	(pt 480 568)
+	(pt 232 568)
+	(bus)
+)
+(connector
+	(pt 480 568)
+	(pt 480 544)
+	(bus)
 )
 (junction (pt 416 120))
 (junction (pt 248 456))

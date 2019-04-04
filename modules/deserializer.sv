@@ -17,7 +17,7 @@ always_ff @(posedge BCLK)begin
 	end
 	if(start == 1)begin
 		if(ADCLRCK == 1 && i >= 16)begin
-			ADCDAT_PAR_Local[i - 16] = ADCDAT;
+			ADCDAT_PAR_Local[i] = ADCDAT;
 			i = i - 1;
 		end
 		else if(ADCLRCK == 0 && i < 16)begin
