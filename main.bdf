@@ -504,6 +504,49 @@ refer to the applicable agreement for further details.
 		(rectangle (rect 16 16 224 96))
 	)
 )
+(symbol
+	(rect 216 600 480 712)
+	(text "distortion" (rect 5 0 49 12)(font "Arial" ))
+	(text "inst5" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "threshold" (rect 0 0 44 12)(font "Arial" ))
+		(text "threshold" (rect 21 59 65 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "leftSampleOut[15..0]" (rect 157 27 259 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "rightSampleOut[15..0]" (rect 153 43 260 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 96))
+	)
+)
 (connector
 	(pt 208 272)
 	(pt 224 272)
@@ -642,16 +685,8 @@ refer to the applicable agreement for further details.
 	(pt 208 120)
 )
 (connector
-	(pt -280 672)
-	(pt 200 672)
-)
-(connector
 	(pt -280 120)
 	(pt -280 352)
-)
-(connector
-	(pt -280 352)
-	(pt -280 672)
 )
 (connector
 	(pt 440 544)
@@ -669,54 +704,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 184 624)
-	(pt 208 624)
-	(bus)
-)
-(connector
-	(pt 192 640)
-	(pt 208 640)
-	(bus)
-)
-(connector
-	(pt 480 624)
-	(pt 472 624)
-	(bus)
-)
-(connector
-	(pt 496 640)
-	(pt 472 640)
-	(bus)
-)
-(connector
 	(pt 248 416)
 	(pt 248 456)
-)
-(connector
-	(pt 248 584)
-	(pt 168 584)
-)
-(connector
-	(pt 168 584)
-	(pt 168 656)
-)
-(connector
-	(pt 168 656)
-	(pt 208 656)
-)
-(connector
-	(pt 248 472)
-	(pt 248 584)
-)
-(connector
-	(pt 224 576)
-	(pt 520 576)
-	(bus)
-)
-(connector
-	(pt 520 576)
-	(pt 520 552)
-	(bus)
 )
 (connector
 	(pt 520 552)
@@ -725,15 +714,63 @@ refer to the applicable agreement for further details.
 )
 (connector
 	(pt 480 568)
+	(pt 480 544)
+	(bus)
+)
+(connector
+	(pt 224 576)
+	(pt 200 576)
+	(bus)
+)
+(connector
+	(pt 200 576)
+	(pt 200 648)
+	(bus)
+)
+(connector
+	(pt 200 648)
+	(pt 216 648)
+	(bus)
+)
+(connector
 	(pt 232 568)
+	(pt 192 568)
+	(bus)
+)
+(connector
+	(pt 192 568)
+	(pt 192 632)
+	(bus)
+)
+(connector
+	(pt 192 632)
+	(pt 216 632)
 	(bus)
 )
 (connector
 	(pt 480 568)
-	(pt 480 544)
+	(pt 496 568)
+	(bus)
+)
+(connector
+	(pt 496 568)
+	(pt 496 632)
+	(bus)
+)
+(connector
+	(pt 496 632)
+	(pt 480 632)
+	(bus)
+)
+(connector
+	(pt 520 648)
+	(pt 520 552)
+	(bus)
+)
+(connector
+	(pt 520 648)
+	(pt 480 648)
 	(bus)
 )
 (junction (pt 416 120))
 (junction (pt 248 456))
-(junction (pt -280 352))
-(junction (pt 248 472))

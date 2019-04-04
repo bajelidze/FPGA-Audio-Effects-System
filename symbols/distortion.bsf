@@ -40,16 +40,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "ADCLRCK" (rect 0 0 50 12)(font "Arial" ))
-		(text "ADCLRCK" (rect 21 59 71 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 1))
-	)
-	(port
-		(pt 0 80)
-		(input)
 		(text "threshold" (rect 0 0 35 12)(font "Arial" ))
-		(text "threshold" (rect 21 75 56 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 1))
+		(text "threshold" (rect 21 59 56 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 1))
 	)
 	(port
 		(pt 264 32)
