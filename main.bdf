@@ -105,9 +105,9 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -480 584 -312 600)
+	(rect -496 584 -328 600)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "KEY[3]" (rect 5 0 39 17)(font "Intel Clear" ))
+	(text "KEY[3]" (rect 5 0 38 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -118,6 +118,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+	(annotation_block (location)(rect -560 600 -496 624))
 )
 (pin
 	(output)
@@ -134,7 +135,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 576 176 632 200))
+	(annotation_block (location)(rect 512 208 568 232))
 )
 (pin
 	(output)
@@ -172,7 +173,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect -176 584 0 600)
+	(rect -168 584 8 600)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "LEDR[0]" (rect 90 0 128 17)(font "Intel Clear" ))
 	(pt 0 8)
@@ -185,6 +186,7 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
+	(annotation_block (location)(rect 8 600 72 624))
 )
 (pin
 	(bidir)
@@ -580,9 +582,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -312 560 -176 640)
+	(rect -312 560 -176 672)
 	(text "distortion_controller" (rect 5 0 100 12)(font "Arial" ))
-	(text "inst6" (rect 8 64 30 81)(font "Intel Clear" ))
+	(text "inst6" (rect 8 96 31 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -598,14 +600,21 @@ refer to the applicable agreement for further details.
 		(line (pt 0 48)(pt 16 48))
 	)
 	(port
+		(pt 0 64)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
 		(pt 136 32)
 		(output)
 		(text "led" (rect 0 0 14 12)(font "Arial" ))
-		(text "led" (rect 104 27 118 39)(font "Arial" ))
+		(text "led" (rect 104 27 115 39)(font "Arial" ))
 		(line (pt 136 32)(pt 120 32))
 	)
 	(drawing
-		(rectangle (rect 16 16 120 64))
+		(rectangle (rect 16 16 120 96))
 	)
 )
 (connector
@@ -738,16 +747,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt -296 352)
-	(pt -280 352)
-)
-(connector
 	(pt -280 120)
 	(pt 208 120)
-)
-(connector
-	(pt -280 120)
-	(pt -280 352)
 )
 (connector
 	(pt 440 544)
@@ -833,5 +834,38 @@ refer to the applicable agreement for further details.
 	(pt 480 648)
 	(bus)
 )
+(connector
+	(pt -176 592)
+	(pt -168 592)
+)
+(connector
+	(pt -312 592)
+	(pt -328 592)
+)
+(connector
+	(pt -296 352)
+	(pt -280 352)
+)
+(connector
+	(pt -280 120)
+	(pt -280 352)
+)
+(connector
+	(pt -280 352)
+	(pt -280 544)
+)
+(connector
+	(pt -280 544)
+	(pt -336 544)
+)
+(connector
+	(pt -336 544)
+	(pt -336 624)
+)
+(connector
+	(pt -336 624)
+	(pt -312 624)
+)
 (junction (pt 416 120))
 (junction (pt 248 456))
+(junction (pt -280 352))
