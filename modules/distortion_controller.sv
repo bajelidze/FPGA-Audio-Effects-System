@@ -1,20 +1,37 @@
-module distortion_controller(input key3, key2, CLK, output led = 0);
+module distortion_controller(input key3, key2, CLK, output signed [15:0] gainNum, output signed [15:0] gainDen);
 
-//	logic state = 1;
-//
-//	always @(posedge CLK)begin
-//		if(state == 0 && key3 == 1)begin
-//			state <= 1;
-//		end
-//		else if(state == 1 && key3 == 0)begin
-//			led <= ~led;
-//			state <= 0;
-//		end
-//	end
+	logic key3State = 1;
+	logic key2State = 1;
+	
+	logic flag = 0;
 
 	always @(posedge CLK)begin
-		if(key3 == 0) led <= 1;
-		else led <= 0;
+		if(flag == 0)begin
+			gainNum <= 1;
+			gainDen <= 1;
+			flag <= 1;
+		end
+		else begin
+			if(key3State == 0 && key3 == 1)begin
+				key3State <= 1;
+			end
+			else if(key3State == 1 && key3 == 0)begin
+				if(gainNum > 1)begin
+					gainNum <= gainNum - 1;
+				end
+				key3State <= 0;
+			end
+			
+			if(key2State == 0 && key2 == 1)begin
+				key2State <= 1;
+			end
+			else if(key2State == 1 && key2 == 0)begin
+				if(gainNum < 50)begin
+					gainNum <= gainNum + 1;
+				end
+				key2State <= 0;
+			end
+		end
 	end
 
 endmodule
