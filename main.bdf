@@ -137,6 +137,38 @@ refer to the applicable agreement for further details.
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
 )
 (pin
+	(input)
+	(rect -496 616 -328 632)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "SW[9]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect -496 632 -328 648)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "SW[8]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
 	(output)
 	(rect 400 160 576 176)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
@@ -538,9 +570,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect -312 560 -128 672)
+	(rect -312 560 -128 704)
 	(text "distortion_controller" (rect 5 0 100 12)(font "Arial" ))
-	(text "inst6" (rect 8 96 31 108)(font "Arial" ))
+	(text "inst6" (rect 8 128 31 140)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -558,9 +590,23 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
+		(text "SW9" (rect 0 0 23 12)(font "Arial" ))
+		(text "SW9" (rect 21 59 44 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "SW8" (rect 0 0 23 12)(font "Arial" ))
+		(text "SW8" (rect 21 75 44 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 91 42 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
 	)
 	(port
 		(pt 184 32)
@@ -576,8 +622,15 @@ refer to the applicable agreement for further details.
 		(text "gainDen[15..0]" (rect 103 43 163 55)(font "Arial" ))
 		(line (pt 184 48)(pt 168 48)(line_width 3))
 	)
+	(port
+		(pt 184 64)
+		(output)
+		(text "mode[1..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "mode[1..0]" (rect 119 59 163 71)(font "Arial" ))
+		(line (pt 184 64)(pt 168 64)(line_width 3))
+	)
 	(drawing
-		(rectangle (rect 16 16 168 96))
+		(rectangle (rect 16 16 168 128))
 	)
 )
 (symbol
@@ -615,9 +668,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
+		(text "mode[1..0]" (rect 0 0 53 12)(font "Arial" ))
+		(text "mode[1..0]" (rect 21 91 74 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
 		(text "threshold" (rect 0 0 44 12)(font "Arial" ))
-		(text "threshold" (rect 21 91 65 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96))
+		(text "threshold" (rect 21 107 65 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112))
 	)
 	(port
 		(pt 264 32)
@@ -879,14 +939,6 @@ refer to the applicable agreement for further details.
 	(pt -336 544)
 )
 (connector
-	(pt -336 544)
-	(pt -336 624)
-)
-(connector
-	(pt -336 624)
-	(pt -312 624)
-)
-(connector
 	(pt 96 680)
 	(pt 216 680)
 	(bus)
@@ -918,6 +970,37 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 96 608)
 	(pt 96 680)
+	(bus)
+)
+(connector
+	(pt -336 656)
+	(pt -336 544)
+)
+(connector
+	(pt -336 656)
+	(pt -312 656)
+)
+(connector
+	(pt -328 624)
+	(pt -312 624)
+)
+(connector
+	(pt -328 640)
+	(pt -312 640)
+)
+(connector
+	(pt -128 624)
+	(pt 80 624)
+	(bus)
+)
+(connector
+	(pt 80 624)
+	(pt 80 696)
+	(bus)
+)
+(connector
+	(pt 80 696)
+	(pt 216 696)
 	(bus)
 )
 (junction (pt 416 120))

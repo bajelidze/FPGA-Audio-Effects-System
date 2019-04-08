@@ -1,8 +1,16 @@
-module distortion_controller(input key3, key2, CLK, output signed [15:0] gainNum, output signed [15:0] gainDen);
+module distortion_controller(
+	input key3,
+	input key2,
+	input SW9,
+	input SW8,
+	input CLK,
+	output signed [15:0] gainNum,
+	output signed [15:0] gainDen,
+	output [1:0] mode
+	);
 
 	logic key3State = 1;
 	logic key2State = 1;
-	
 	logic flag = 0;
 
 	always @(posedge CLK)begin
@@ -10,6 +18,7 @@ module distortion_controller(input key3, key2, CLK, output signed [15:0] gainNum
 			gainNum <= 1;
 			gainDen <= 1;
 			flag <= 1;
+			mode <= 0;
 		end
 		else begin
 			if(key3State == 0 && key3 == 1)begin
@@ -30,6 +39,16 @@ module distortion_controller(input key3, key2, CLK, output signed [15:0] gainNum
 					gainNum <= gainNum + 1;
 				end
 				key2State <= 0;
+			end
+			
+			if(SW9 == 1)begin
+				mode <= 1;
+			end
+			else if(SW8 == 1)begin	//if SW9 == 0 && SW8 == 1
+				mode <= 2;
+			end
+			else begin
+				mode <= 0;
 			end
 		end
 	end
