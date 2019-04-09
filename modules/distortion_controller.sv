@@ -47,8 +47,19 @@ module distortion_controller(
 					key3State <= 1;
 				end
 				else if(key3State == 1 && key3 == 0)begin
-					if(threshold > 500)begin
-						threshold <= threshold - 500;
+					if(threshold > 20)begin
+						if(threshold <= 100)begin
+							threshold <= threshold - 10;
+						end
+						else if(threshold <= 500)begin
+							threshold <= threshold - 50;
+						end
+						else if(threshold <= 1000)begin
+							threshold <= threshold - 100;
+						end
+						else begin
+							threshold <= threshold - 500;
+						end
 					end
 					key3State <= 0;
 				end
@@ -58,7 +69,18 @@ module distortion_controller(
 				end
 				else if(key2State == 1 && key2 == 0)begin
 					if(threshold < 32000)begin
-						threshold <= threshold + 500;
+						if(threshold <= 100 && threshold > 20)begin
+							threshold <= threshold + 10;
+						end
+						else if(threshold <= 500)begin
+							threshold <= threshold + 50;
+						end
+						else if(threshold <= 1000)begin
+							threshold <= threshold + 100;
+						end
+						else begin
+							threshold <= threshold + 500;
+						end
 					end
 					key2State <= 0;
 				end
