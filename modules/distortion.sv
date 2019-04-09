@@ -5,7 +5,7 @@ module distortion(
 	output signed [15:0] rightSampleOut,
 	input signed [15:0] gainNum,		//Numerator	0-128
 	input signed [31:0] threshold,
-	input [1:0] mode //0 - OFF, 1 - Distortion ON, 2 - Rectifier Distortion ON
+	input [1:0] mode //0 - OFF, 1/3 - Distortion ON, 2 - Rectifier Distortion ON
 	);
 	
 	logic signed [31:0] left_Local = 0;
@@ -16,7 +16,7 @@ module distortion(
 			leftSampleOut <= leftSampleIn;
 			rightSampleOut <= rightSampleIn;
 		end
-		else if(mode == 1)begin		// Distortion ON
+		else if(mode == 1 || mode == 3)begin		// Distortion ON
 //			left_Local <= (leftSampleIn * gainNum) / gainDen;
 //			right_Local <= (rightSampleIn * gainNum) / gainDen;
 //			
