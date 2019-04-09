@@ -61,28 +61,70 @@ module distortion(
 			
 			if(left_Local > threshold)begin
 				left_Local = threshold * gain;
-				leftSampleOut = left_Local[15:0];
+				
+				if(left_Local > 32767)begin
+					leftSampleOut = 16'd32767;
+				end
+				else begin
+					leftSampleOut = left_Local[15:0];
+				end
 			end
 			else if(left_Local < -threshold)begin
 				left_Local = -threshold * gain;
-				leftSampleOut = left_Local[15:0];
+				
+				if(left_Local < -32768)begin
+					leftSampleOut = -16'd32768;
+				end
+				else begin
+					leftSampleOut = left_Local[15:0];
+				end
 			end
 			else begin
 				left_Local = left_Local * gain;
-				leftSampleOut = left_Local[15:0];
+				
+				if(left_Local > 32767)begin
+					leftSampleOut = 16'd32767;
+				end
+				if(left_Local < -32768)begin
+					leftSampleOut = -16'd32768;
+				end
+				else begin
+					leftSampleOut = left_Local[15:0];
+				end
 			end
 			
 			if(right_Local > threshold)begin
 				right_Local = threshold * gain;
-				rightSampleOut = right_Local[15:0];
+				
+				if(right_Local > 32767)begin
+					rightSampleOut = 16'd32767;
+				end
+				else begin
+					rightSampleOut = right_Local[15:0];
+				end
 			end
 			else if(right_Local < -threshold)begin
 				right_Local = -threshold * gain;
-				rightSampleOut = right_Local[15:0];
+				
+				if(right_Local < -32768)begin
+					rightSampleOut = -16'd32768;
+				end
+				else begin
+					rightSampleOut = right_Local[15:0];
+				end
 			end
 			else begin
 				right_Local = right_Local * gain;
-				rightSampleOut = right_Local[15:0];
+				
+				if(right_Local > 32767)begin
+					rightSampleOut = 16'd32767;
+				end
+				if(right_Local < -32768)begin
+					rightSampleOut = -16'd32768;
+				end
+				else begin
+					rightSampleOut = right_Local[15:0];
+				end
 			end
 		end
 		else if(mode == 2)begin			//Rectifier Distortion ON
