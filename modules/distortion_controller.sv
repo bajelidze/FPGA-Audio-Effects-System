@@ -4,7 +4,7 @@ module distortion_controller(
 	input [1:0] SW,
 //	input SW8,
 	input CLK,
-	output signed [15:0] gainNum,
+	output signed [15:0] gain,
 	output signed [31:0] threshold,
 	output [1:0] mode
 	);
@@ -15,7 +15,7 @@ module distortion_controller(
 
 	always @(posedge CLK)begin
 		if(flag == 0)begin
-			gainNum <= 1;
+			gain <= 1;
 			flag <= 1;
 			mode <= 0;
 			threshold <= 16000; //remove this
@@ -26,8 +26,8 @@ module distortion_controller(
 					key3State <= 1;
 				end
 				else if(key3State == 1 && key3 == 0)begin
-					if(gainNum > 1)begin
-						gainNum <= gainNum - 1;
+					if(gain > 1)begin
+						gain <= gain - 1;
 					end
 					key3State <= 0;
 				end
@@ -36,8 +36,8 @@ module distortion_controller(
 					key2State <= 1;
 				end
 				else if(key2State == 1 && key2 == 0)begin
-					if(gainNum < 50)begin
-						gainNum <= gainNum + 1;
+					if(gain < 50)begin
+						gain <= gain + 1;
 					end
 					key2State <= 0;
 				end

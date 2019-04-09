@@ -54,8 +54,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 200 32)
 		(output)
-		(text "gainNum[15..0]" (rect 0 0 59 12)(font "Arial" ))
-		(text "gainNum[15..0]" (rect 120 27 179 39)(font "Arial" ))
+		(text "gain[15..0]" (rect 0 0 38 12)(font "Arial" ))
+		(text "gain[15..0]" (rect 141 27 179 39)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
