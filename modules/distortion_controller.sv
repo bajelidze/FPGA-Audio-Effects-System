@@ -1,8 +1,7 @@
 module distortion_controller(
 	input key3,
 	input key2,
-	input [1:0] SW,
-//	input SW8,
+	input [9:0] SW,
 	input CLK,
 	output signed [15:0] gain,
 	output signed [31:0] threshold,
@@ -18,7 +17,7 @@ module distortion_controller(
 			gain <= 1;
 			flag <= 1;
 			mode <= 0;
-			threshold <= 16000; //remove this
+			threshold <= 1000; //remove this
 		end
 		else begin
 			if(mode == 1)begin
