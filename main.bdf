@@ -766,9 +766,59 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
+	(rect -112 760 88 872)
+	(text "tremolo_controller" (rect 5 0 92 12)(font "Arial" ))
+	(text "inst7" (rect 8 96 30 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "key3" (rect 0 0 24 12)(font "Arial" ))
+		(text "key3" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "key2" (rect 0 0 24 12)(font "Arial" ))
+		(text "key2" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "SW[9..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "SW[9..0]" (rect 21 59 64 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 200 32)
+		(output)
+		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
+		(text "disabled" (rect 146 27 186 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(port
+		(pt 200 48)
+		(output)
+		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 110 43 192 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 184 96))
+	)
+)
+(symbol
 	(rect 216 656 480 768)
 	(text "tremolo" (rect 5 0 41 12)(font "Arial" ))
-	(text "inst5" (rect 8 96 30 113)(font "Intel Clear" ))
+	(text "inst5" (rect 8 96 31 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -786,22 +836,29 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
+		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 21 59 103 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
 		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 59 42 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
+		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
 	)
 	(port
 		(pt 264 32)
 		(output)
 		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "leftSampleOut[15..0]" (rect 157 27 259 39)(font "Arial" ))
+		(text "leftSampleOut[15..0]" (rect 157 27 243 39)(font "Arial" ))
 		(line (pt 264 32)(pt 248 32)(line_width 3))
 	)
 	(port
 		(pt 264 48)
 		(output)
 		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "rightSampleOut[15..0]" (rect 153 43 260 55)(font "Arial" ))
+		(text "rightSampleOut[15..0]" (rect 153 43 243 55)(font "Arial" ))
 		(line (pt 264 48)(pt 248 48)(line_width 3))
 	)
 	(drawing
@@ -932,10 +989,6 @@ refer to the applicable agreement for further details.
 	(pt -112 680)
 )
 (connector
-	(pt -160 664)
-	(pt -112 664)
-)
-(connector
 	(pt 256 208)
 	(pt 192 208)
 )
@@ -1008,11 +1061,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -408 608)
 	(pt -408 624)
-	(bus)
-)
-(connector
-	(pt -408 624)
-	(pt -408 696)
 	(bus)
 )
 (connector
@@ -1156,16 +1204,78 @@ refer to the applicable agreement for further details.
 	(pt -280 608)
 )
 (connector
+	(pt 104 736)
+	(pt 104 608)
+)
+(connector
+	(pt 104 736)
+	(pt 216 736)
+)
+(connector
+	(pt 88 808)
+	(pt 120 808)
+	(bus)
+)
+(connector
+	(pt 120 808)
+	(pt 120 720)
+	(bus)
+)
+(connector
+	(pt 120 720)
+	(pt 216 720)
+	(bus)
+)
+(connector
+	(pt -160 680)
+	(pt -160 808)
+)
+(connector
+	(pt -160 808)
+	(pt -112 808)
+)
+(connector
+	(pt -144 664)
+	(pt -144 792)
+)
+(connector
+	(pt -160 664)
+	(pt -144 664)
+)
+(connector
+	(pt -144 664)
+	(pt -112 664)
+)
+(connector
+	(pt -144 792)
+	(pt -112 792)
+)
+(connector
+	(pt -408 624)
+	(pt -408 696)
+	(bus)
+)
+(connector
+	(pt -408 696)
+	(pt -408 824)
+	(bus)
+)
+(connector
+	(pt -408 824)
+	(pt -112 824)
+	(bus)
+)
+(connector
 	(pt -280 608)
 	(pt -280 712)
 )
 (connector
-	(pt 104 608)
-	(pt 104 720)
+	(pt -280 712)
+	(pt -280 840)
 )
 (connector
-	(pt 104 720)
-	(pt 216 720)
+	(pt -280 840)
+	(pt -112 840)
 )
 (junction (pt 416 120))
 (junction (pt 248 456))
@@ -1181,3 +1291,7 @@ refer to the applicable agreement for further details.
 (junction (pt -408 608))
 (junction (pt -408 624))
 (junction (pt -280 608))
+(junction (pt -160 680))
+(junction (pt -144 664))
+(junction (pt -408 696))
+(junction (pt -280 712))

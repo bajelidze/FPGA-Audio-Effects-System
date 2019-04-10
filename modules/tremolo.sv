@@ -3,6 +3,7 @@ module tremolo(
 	input signed [15:0] rightSampleIn,
 	output signed [15:0] leftSampleOut,
 	output signed [15:0] rightSampleOut,
+	input [31:0] frequency,
 	input CLK
 	);
 	
@@ -16,7 +17,7 @@ module tremolo(
 	logic direction = 0; //0 = down, 1 = up
 	
 	always @(posedge CLK)begin
-		if(counter < 19531)begin //125k = 1 Hz, 10k = 12.5 Hz
+		if(counter < frequency)begin //min/step: 256 - 0.5Hz, max: 5120 - 10Hz, frequency = 50M / divisor (50M / 256 = 0.5Hz)
 			counter <= counter + 1;
 		end
 		else begin
