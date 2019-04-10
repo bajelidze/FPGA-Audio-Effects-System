@@ -40,8 +40,8 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 64)
 		(input)
-		(text "SW[1..0]" (rect 0 0 35 12)(font "Arial" ))
-		(text "SW[1..0]" (rect 21 59 56 71)(font "Arial" ))
+		(text "SW[9..0]" (rect 0 0 36 12)(font "Arial" ))
+		(text "SW[9..0]" (rect 21 59 57 71)(font "Arial" ))
 		(line (pt 0 64)(pt 16 64)(line_width 3))
 	)
 	(port

@@ -17,45 +17,6 @@ module distortion(
 			rightSampleOut = rightSampleIn;
 		end
 		else if(mode == 1 || mode == 3)begin		// Distortion ON
-//			left_Local <= leftSampleIn * gain;
-//			right_Local <= rightSampleIn * gain;
-//			
-//			if(left_Local > threshold)begin
-//				leftSampleOut <= threshold[15:0];
-//			end
-//			else if(left_Local < -threshold)begin
-//				leftSampleOut <= -threshold[15:0];
-//			end
-//			else begin
-//				if(left_Local > 32767)begin
-//					leftSampleOut <= 16'd32767;
-//				end
-//				if(left_Local < -32768)begin
-//					leftSampleOut <= -16'd32768;
-//				end
-//				else begin
-//					leftSampleOut <= left_Local[15:0];
-//				end
-//			end
-//			
-//			if(right_Local > threshold)begin
-//				rightSampleOut <= threshold[15:0];
-//			end
-//			else if(right_Local < -threshold)begin
-//				rightSampleOut <= -threshold[15:0];
-//			end
-//			else begin
-//				if(right_Local > 32767)begin
-//					rightSampleOut <= 16'd32767;
-//				end
-//				if(right_Local < -32768)begin
-//					rightSampleOut <= -16'd32768;
-//				end
-//				else begin
-//					rightSampleOut <= right_Local[15:0];
-//				end
-//			end
-
 			left_Local = leftSampleIn;
 			right_Local = rightSampleIn;
 			
