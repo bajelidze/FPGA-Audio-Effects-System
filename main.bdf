@@ -175,7 +175,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 504 -456 520)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[2]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[2]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -192,7 +192,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 520 -456 536)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[3]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[3]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -209,7 +209,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 536 -456 552)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[4]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[4]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -226,7 +226,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 552 -456 568)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[5]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[5]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -243,7 +243,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 568 -456 584)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[6]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[6]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -260,7 +260,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 584 -456 600)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[7]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[7]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -277,7 +277,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 600 -456 616)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[8]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[8]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -294,7 +294,7 @@ refer to the applicable agreement for further details.
 	(input)
 	(rect -624 616 -456 632)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
-	(text "SW[9]" (rect 5 0 35 17)(font "Intel Clear" ))
+	(text "SW[9]" (rect 5 0 34 17)(font "Intel Clear" ))
 	(pt 168 8)
 	(drawing
 		(line (pt 84 12)(pt 109 12))
@@ -744,21 +744,21 @@ refer to the applicable agreement for further details.
 		(pt 200 32)
 		(output)
 		(text "gain[15..0]" (rect 0 0 51 12)(font "Arial" ))
-		(text "gain[15..0]" (rect 136 27 179 39)(font "Arial" ))
+		(text "gain[15..0]" (rect 136 27 187 39)(font "Arial" ))
 		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
 		(pt 200 48)
 		(output)
 		(text "threshold[31..0]" (rect 0 0 76 12)(font "Arial" ))
-		(text "threshold[31..0]" (rect 115 43 179 55)(font "Arial" ))
+		(text "threshold[31..0]" (rect 115 43 191 55)(font "Arial" ))
 		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(port
 		(pt 200 64)
 		(output)
 		(text "mode[1..0]" (rect 0 0 53 12)(font "Arial" ))
-		(text "mode[1..0]" (rect 135 59 179 71)(font "Arial" ))
+		(text "mode[1..0]" (rect 135 59 188 71)(font "Arial" ))
 		(line (pt 200 64)(pt 184 64)(line_width 3))
 	)
 	(drawing
@@ -816,56 +816,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 496 744 760 856)
-	(text "tremolo" (rect 5 0 41 12)(font "Arial" ))
-	(text "inst5" (rect 8 96 31 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
-		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
-		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "frequency[31..0]" (rect 21 59 103 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
-	)
-	(port
-		(pt 264 32)
-		(output)
-		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
-		(text "leftSampleOut[15..0]" (rect 157 27 243 39)(font "Arial" ))
-		(line (pt 264 32)(pt 248 32)(line_width 3))
-	)
-	(port
-		(pt 264 48)
-		(output)
-		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
-		(text "rightSampleOut[15..0]" (rect 153 43 243 55)(font "Arial" ))
-		(line (pt 264 48)(pt 248 48)(line_width 3))
-	)
-	(drawing
-		(rectangle (rect 16 16 248 96))
-	)
-)
-(symbol
 	(rect 152 600 416 744)
 	(text "distortion" (rect 5 0 49 12)(font "Arial" ))
 	(text "inst8" (rect 8 128 30 145)(font "Intel Clear" ))
@@ -916,6 +866,63 @@ refer to the applicable agreement for further details.
 		(output)
 		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
 		(text "rightSampleOut[15..0]" (rect 153 43 260 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 128))
+	)
+)
+(symbol
+	(rect 496 744 760 888)
+	(text "tremolo" (rect 5 0 41 12)(font "Arial" ))
+	(text "inst5" (rect 8 128 31 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 21 59 103 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
+		(text "disabled" (rect 21 75 61 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 91 42 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "leftSampleOut[15..0]" (rect 157 27 243 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "rightSampleOut[15..0]" (rect 153 43 243 55)(font "Arial" ))
 		(line (pt 264 48)(pt 248 48)(line_width 3))
 	)
 	(drawing
@@ -1292,17 +1299,9 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 104 608)
-	(pt 104 824)
-)
-(connector
 	(pt 88 808)
 	(pt 496 808)
 	(bus)
-)
-(connector
-	(pt 104 824)
-	(pt 496 824)
 )
 (connector
 	(pt 448 472)
@@ -1368,6 +1367,26 @@ refer to the applicable agreement for further details.
 	(pt 448 544)
 	(pt 784 544)
 	(bus)
+)
+(connector
+	(pt 104 840)
+	(pt 104 608)
+)
+(connector
+	(pt 104 840)
+	(pt 496 840)
+)
+(connector
+	(pt 88 792)
+	(pt 432 792)
+)
+(connector
+	(pt 432 792)
+	(pt 432 824)
+)
+(connector
+	(pt 432 824)
+	(pt 496 824)
 )
 (junction (pt 416 120))
 (junction (pt 248 456))

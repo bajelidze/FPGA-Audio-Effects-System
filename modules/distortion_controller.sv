@@ -85,13 +85,13 @@ module distortion_controller(
 				end
 			end
 			
-			if(SW == 1)begin	//01
+			if(SW[0] == 1 && SW[1] == 0)begin	//01
 				mode <= 1;
 			end
-			else if(SW == 2)begin	//if SW9 == 0 && SW8 == 1	10
+			else if(SW[0] == 0 && SW[1] == 1)begin	//if SW9 == 0 && SW8 == 1	10
 				mode <= 2;
 			end
-			else if(SW == 3)begin
+			else if(SW[0] == 1 && SW[1] == 1)begin
 				mode <= 3;
 			end
 			else begin

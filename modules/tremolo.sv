@@ -4,6 +4,7 @@ module tremolo(
 	output signed [15:0] leftSampleOut,
 	output signed [15:0] rightSampleOut,
 	input [31:0] frequency,
+	input disabled,
 	input CLK
 	);
 	
@@ -17,12 +18,17 @@ module tremolo(
 	logic direction = 0; //0 = down, 1 = up
 	
 	always @(posedge CLK)begin
-		if(counter < frequency)begin //min/step: 256 - 0.5Hz, max: 5120 - 10Hz, frequency = 50M / divisor (50M / 256 = 0.5Hz)
-			counter <= counter + 1;
+		if(disabled == 0)begin
+			if(counter < frequency)begin //min/step: 256 - 0.5Hz, max: 5120 - 10Hz, frequency = 50M / divisor (50M / 256 = 0.5Hz)
+				counter <= counter + 1;
+			end
+			else begin
+				counter <= 0;
+				CLK_Tr <= ~CLK_Tr;
+			end
 		end
 		else begin
-			counter <= 0;
-			CLK_Tr <= ~CLK_Tr;
+			CLK_Tr <= 0;
 		end
 	end
 	
@@ -49,14 +55,20 @@ module tremolo(
 	end
 	
 	always @(leftSampleIn)begin
-		left_Local = leftSampleIn;
-		right_Local = rightSampleIn;
-		
-		left_Local = (left_Local * triangleNum) >>> 7;
-		right_Local = (right_Local * triangleNum) >>> 7;
-		
-		leftSampleOut = left_Local[15:0];
-		rightSampleOut = right_Local[15:0];
+		if(disabled == 0)begin
+			left_Local = leftSampleIn;
+			right_Local = rightSampleIn;
+			
+			left_Local = (left_Local * triangleNum) >>> 7;
+			right_Local = (right_Local * triangleNum) >>> 7;
+			
+			leftSampleOut = left_Local[15:0];
+			rightSampleOut = right_Local[15:0];
+		end
+		else begin
+			leftSampleOut = leftSampleIn;
+			rightSampleOut = rightSampleIn;
+		end
 	end
 	
 endmodule
