@@ -816,7 +816,7 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 536 616 704 696)
+	(rect 128 768 288 848)
 	(text "sinWaveGenerator" (rect 5 0 97 12)(font "Arial" ))
 	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
 	(port
@@ -827,14 +827,57 @@ refer to the applicable agreement for further details.
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
-		(pt 168 32)
+		(pt 160 32)
 		(output)
-		(text "sinOut[15..0]" (rect 0 0 63 12)(font "Arial" ))
-		(text "sinOut[15..0]" (rect 94 27 147 39)(font "Arial" ))
-		(line (pt 168 32)(pt 152 32)(line_width 3))
+		(text "sin[31..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "sin[31..0]" (rect 101 27 139 39)(font "Arial" ))
+		(line (pt 160 32)(pt 144 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 152 64))
+		(rectangle (rect 16 16 144 64))
+	)
+)
+(symbol
+	(rect 304 608 568 720)
+	(text "ring_modulation" (rect 5 0 81 12)(font "Arial" ))
+	(text "inst11" (rect 8 96 36 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "leftSampleIn[15..0]" (rect 0 0 94 12)(font "Arial" ))
+		(text "leftSampleIn[15..0]" (rect 21 27 115 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rightSampleIn[15..0]" (rect 0 0 99 12)(font "Arial" ))
+		(text "rightSampleIn[15..0]" (rect 21 43 120 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "sin[31..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "sin[31..0]" (rect 21 59 67 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 264 32)
+		(output)
+		(text "leftSampleOut[15..0]" (rect 0 0 102 12)(font "Arial" ))
+		(text "leftSampleOut[15..0]" (rect 157 27 259 39)(font "Arial" ))
+		(line (pt 264 32)(pt 248 32)(line_width 3))
+	)
+	(port
+		(pt 264 48)
+		(output)
+		(text "rightSampleOut[15..0]" (rect 0 0 107 12)(font "Arial" ))
+		(text "rightSampleOut[15..0]" (rect 153 43 260 55)(font "Arial" ))
+		(line (pt 264 48)(pt 248 48)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 248 96))
 	)
 )
 (connector
@@ -1088,11 +1131,6 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 240 488)
-	(pt 240 560)
-	(bus)
-)
-(connector
 	(pt -280 608)
 	(pt 104 608)
 )
@@ -1152,26 +1190,6 @@ refer to the applicable agreement for further details.
 	(pt -112 840)
 )
 (connector
-	(pt 224 544)
-	(pt 224 504)
-	(bus)
-)
-(connector
-	(pt 128 544)
-	(pt 224 544)
-	(bus)
-)
-(connector
-	(pt 464 776)
-	(pt 496 776)
-	(bus)
-)
-(connector
-	(pt 88 808)
-	(pt 496 808)
-	(bus)
-)
-(connector
 	(pt 448 472)
 	(pt 448 544)
 	(bus)
@@ -1182,94 +1200,8 @@ refer to the applicable agreement for further details.
 	(bus)
 )
 (connector
-	(pt 464 776)
-	(pt 464 632)
-	(bus)
-)
-(connector
-	(pt 416 632)
-	(pt 464 632)
-	(bus)
-)
-(connector
-	(pt 448 792)
-	(pt 496 792)
-	(bus)
-)
-(connector
-	(pt 448 792)
-	(pt 448 648)
-	(bus)
-)
-(connector
-	(pt 448 648)
-	(pt 416 648)
-	(bus)
-)
-(connector
 	(pt 432 560)
 	(pt 768 560)
-	(bus)
-)
-(connector
-	(pt 448 544)
-	(pt 784 544)
-	(bus)
-)
-(connector
-	(pt 104 840)
-	(pt 496 840)
-)
-(connector
-	(pt 88 792)
-	(pt 432 792)
-)
-(connector
-	(pt 432 792)
-	(pt 432 824)
-)
-(connector
-	(pt 432 824)
-	(pt 496 824)
-)
-(connector
-	(pt 104 600)
-	(pt 512 600)
-)
-(connector
-	(pt 104 600)
-	(pt 104 608)
-)
-(connector
-	(pt 104 608)
-	(pt 104 840)
-)
-(connector
-	(pt 512 600)
-	(pt 512 648)
-)
-(connector
-	(pt 512 648)
-	(pt 536 648)
-)
-(connector
-	(pt 768 648)
-	(pt 768 560)
-	(bus)
-)
-(connector
-	(pt 784 648)
-	(pt 784 544)
-	(bus)
-)
-(connector
-	(pt 704 648)
-	(pt 768 648)
-	(bus)
-)
-(connector
-	(pt 768 648)
-	(pt 784 648)
 	(bus)
 )
 (connector
@@ -1285,6 +1217,77 @@ refer to the applicable agreement for further details.
 (connector
 	(pt 88 664)
 	(pt 120 664)
+	(bus)
+)
+(connector
+	(pt 448 544)
+	(pt 784 544)
+	(bus)
+)
+(connector
+	(pt 104 600)
+	(pt 144 600)
+)
+(connector
+	(pt 104 800)
+	(pt 128 800)
+)
+(connector
+	(pt 104 600)
+	(pt 104 608)
+)
+(connector
+	(pt 104 608)
+	(pt 104 800)
+)
+(connector
+	(pt 288 800)
+	(pt 288 672)
+	(bus)
+)
+(connector
+	(pt 288 672)
+	(pt 304 672)
+	(bus)
+)
+(connector
+	(pt 224 656)
+	(pt 224 504)
+	(bus)
+)
+(connector
+	(pt 224 656)
+	(pt 304 656)
+	(bus)
+)
+(connector
+	(pt 240 640)
+	(pt 240 488)
+	(bus)
+)
+(connector
+	(pt 240 640)
+	(pt 304 640)
+	(bus)
+)
+(connector
+	(pt 568 640)
+	(pt 768 640)
+	(bus)
+)
+(connector
+	(pt 768 560)
+	(pt 768 640)
+	(bus)
+)
+(connector
+	(pt 568 656)
+	(pt 784 656)
+	(bus)
+)
+(connector
+	(pt 784 544)
+	(pt 784 656)
 	(bus)
 )
 (junction (pt 416 120))
@@ -1306,4 +1309,3 @@ refer to the applicable agreement for further details.
 (junction (pt -408 696))
 (junction (pt -280 712))
 (junction (pt 104 608))
-(junction (pt 768 648))

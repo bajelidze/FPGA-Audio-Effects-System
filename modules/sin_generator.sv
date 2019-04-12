@@ -1,6 +1,6 @@
 module sinWaveGenerator(
 	input CLK,
-	output signed [15:0] sinOut
+	output signed [31:0] sin
 	);
 	
 	logic [31:0] x = 0;
@@ -8,12 +8,8 @@ module sinWaveGenerator(
 	logic CLK_Sin = 0;
 	logic [31:0] counter = 0;
 	
-	logic signed [31:0] sin = 0;
-	
-	assign sinOut = sin[15:0];
-	
 	always @(posedge CLK)begin
-		if(counter < 1775)begin
+		if(counter < 3551)begin //3551
 			counter <= counter + 1;
 		end
 		else begin
