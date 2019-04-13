@@ -687,4 +687,5 @@ set_global_assignment -name SYSTEMVERILOG_FILE modules/sin_generator.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/ring_modulation.sv
 set_global_assignment -name SYSTEMVERILOG_FILE modules/ring_modulation_controller.sv
 set_global_assignment -name SLD_FILE db/echo_debug_auto_stripped.stp
+set_global_assignment -name SYSTEMVERILOG_FILE modules/ram.sv
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

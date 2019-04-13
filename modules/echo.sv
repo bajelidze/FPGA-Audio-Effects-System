@@ -1,47 +1,55 @@
-//module echo(
-//	input [15:0] leftSampleIn,
-//	input [15:0] rightSampleIn,
-//	output [15:0] leftSampleOut,
-//	output [15:0] rightSampleOut,
-//	input Enable,
-//	input CLOCK_50,
-//	input ADCLRCK //50 Mhz
-//	);
-//	
-//logic signed [15:0] leftSampleIn_Local;
-//logic signed [15:0] rightSampleIn_Local;
-//logic signed [15:0] leftSampleOut_Local;
-//logic signed [15:0] rightSampleOut_Local;
-//logic signed [15:0] leftBuffer = 0;
-//logic signed [15:0] rightBuffer = 0;
-//
-//logic signed [15:0] leftDelayLine [0:47999];
-//
-//logic [31:0] delay = 47999;
-//logic [31:0] counter = 0;
-//
-//assign leftSampleIn_Local = leftSampleIn;
-//assign rightSampleIn_Local = rightSampleIn;
-//
-//assign leftSampleOut = leftSampleOut_Local;
-//assign rightSampleOut = rightSampleOut_Local;
-//
-////always @(posedge CLOCK_50)begin
-////	if(counter < delay)begin
-////		counter <= counter + 1;
-////	end
-////end
-//
-//always @(posedge ADCLRCK)begin
-//	if(counter < delay)begin
-//		leftDelayLine[counter] <= leftSampleIn_Local;
-//		counter <= counter + 1;
-//	end
-//	else begin
-//		leftDelayLine[0:47998] <= leftDelayLine[1:47999];
-//		leftDelayLine[47999] <= leftSampleIn_Local;
-//		leftSampleOut_Local <= leftSampleIn_Local + (leftDelayLine[0] / 2);
-//	end
-//end
-//
-//endmodule
+module echo(
+	input signed [15:0] leftSampleIn,
+	input signed [15:0] rightSampleIn,
+	output signed [15:0] leftSampleOut,
+	output signed [15:0] rightSampleOut,
+	
+	input signed [15:0] Q,
+	output signed [15:0] D,
+	output [15:0] write_address,
+	output [15:0] read_address,
+	output W_E
+	);
+	
+	logic signed [31:0] left_Local = 0;
+	logic signed [31:0] right_Local = 0;
+	
+	logic flag = 0;
+	logic [31:0] counter = 0;
+
+	always @(leftSampleIn)begin
+		if(flag == 0)begin
+			D <= leftSampleIn;
+			leftSampleOut <= leftSampleIn;
+			rightSampleOut <= leftSampleIn;
+			W_E <= 1;
+			write_address <= 0;
+			read_address <= 0;
+		end
+		else begin
+			if(counter <= 65535)begin
+				counter <= counter + 1;
+				
+				if(write_address < 65535)
+					write_address <= write_address + 1;
+				else
+					write_address <= 0;
+					
+				D <= leftSampleIn;
+				
+				leftSampleOut <= leftSampleIn;
+				rightSampleOut <= leftSampleIn;
+			end
+			else begin
+				write_address <= write_address + 1;
+				read_address <= read_address + 1;
+				
+				leftSampleOut <= leftSampleIn + (Q / 2);
+				rigthSampleOut <= leftSampleIn + (Q / 2);
+				
+				D <= leftSampleIn;
+			end
+		end
+	end
+	
+endmodule
