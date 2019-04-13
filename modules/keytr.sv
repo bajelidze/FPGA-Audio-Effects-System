@@ -3,8 +3,7 @@ module keytr(
 	input key1,
 	output ON,
 	input clock,
-	output KEYON,
-	output [9:0] counter
+	output KEYON
 	);
 
 	logic [3:0] sw;
