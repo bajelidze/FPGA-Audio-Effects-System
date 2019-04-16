@@ -938,9 +938,9 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 232 656 496 800)
+	(rect 232 656 496 832)
 	(text "echo" (rect 5 0 28 12)(font "Arial" ))
-	(text "inst5" (rect 8 128 31 140)(font "Arial" ))
+	(text "inst5" (rect 8 160 31 172)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
@@ -968,6 +968,27 @@ refer to the applicable agreement for further details.
 		(text "ADCLRCK" (rect 0 0 53 12)(font "Arial" ))
 		(text "ADCLRCK" (rect 21 75 74 87)(font "Arial" ))
 		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "delay_time[31..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "delay_time[31..0]" (rect 21 91 107 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "delay_volume[31..0]" (rect 0 0 101 12)(font "Arial" ))
+		(text "delay_volume[31..0]" (rect 21 107 122 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 3))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
+		(text "disabled" (rect 21 123 61 135)(font "Arial" ))
+		(line (pt 0 128)(pt 16 128))
 	)
 	(port
 		(pt 264 32)
@@ -1012,7 +1033,64 @@ refer to the applicable agreement for further details.
 		(line (pt 264 112)(pt 248 112))
 	)
 	(drawing
-		(rectangle (rect 16 16 248 128))
+		(rectangle (rect 16 16 248 160))
+	)
+)
+(symbol
+	(rect -112 1112 104 1224)
+	(text "echo_controller" (rect 5 0 79 12)(font "Arial" ))
+	(text "inst11" (rect 8 96 36 113)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "key3" (rect 0 0 24 12)(font "Arial" ))
+		(text "key3" (rect 21 27 45 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "key2" (rect 0 0 24 12)(font "Arial" ))
+		(text "key2" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "SW[9..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "SW[9..0]" (rect 21 59 64 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 216 32)
+		(output)
+		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
+		(text "disabled" (rect 162 27 202 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32))
+	)
+	(port
+		(pt 216 48)
+		(output)
+		(text "delay_volume[31..0]" (rect 0 0 101 12)(font "Arial" ))
+		(text "delay_volume[31..0]" (rect 110 43 211 55)(font "Arial" ))
+		(line (pt 216 48)(pt 200 48)(line_width 3))
+	)
+	(port
+		(pt 216 64)
+		(output)
+		(text "delay_time[31..0]" (rect 0 0 86 12)(font "Arial" ))
+		(text "delay_time[31..0]" (rect 123 59 209 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 200 96))
 	)
 )
 (connector
@@ -1275,25 +1353,12 @@ refer to the applicable agreement for further details.
 	(pt -160 808)
 )
 (connector
-	(pt -160 808)
-	(pt -160 1032)
-)
-(connector
 	(pt -144 664)
 	(pt -144 792)
 )
 (connector
-	(pt -144 792)
-	(pt -144 1016)
-)
-(connector
 	(pt -408 696)
 	(pt -408 824)
-	(bus)
-)
-(connector
-	(pt -408 824)
-	(pt -408 1048)
 	(bus)
 )
 (connector
@@ -1328,10 +1393,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -104 920)
 	(pt -280 920)
-)
-(connector
-	(pt -280 920)
-	(pt -280 1064)
 )
 (connector
 	(pt 248 384)
@@ -1547,6 +1608,127 @@ refer to the applicable agreement for further details.
 	(pt 496 704)
 	(bus)
 )
+(connector
+	(pt 176 864)
+	(pt 432 864)
+	(bus)
+)
+(connector
+	(pt 176 864)
+	(pt 176 768)
+	(bus)
+)
+(connector
+	(pt 176 768)
+	(pt 232 768)
+	(bus)
+)
+(connector
+	(pt 448 880)
+	(pt 160 880)
+	(bus)
+)
+(connector
+	(pt 160 880)
+	(pt 160 752)
+	(bus)
+)
+(connector
+	(pt 160 752)
+	(pt 232 752)
+	(bus)
+)
+(connector
+	(pt 432 1160)
+	(pt 104 1160)
+	(bus)
+)
+(connector
+	(pt 432 864)
+	(pt 432 1160)
+	(bus)
+)
+(connector
+	(pt 448 1176)
+	(pt 104 1176)
+	(bus)
+)
+(connector
+	(pt 448 880)
+	(pt 448 1176)
+	(bus)
+)
+(connector
+	(pt -144 1144)
+	(pt -112 1144)
+)
+(connector
+	(pt -144 792)
+	(pt -144 1016)
+)
+(connector
+	(pt -144 1016)
+	(pt -144 1144)
+)
+(connector
+	(pt -160 1160)
+	(pt -112 1160)
+)
+(connector
+	(pt -160 808)
+	(pt -160 1032)
+)
+(connector
+	(pt -160 1032)
+	(pt -160 1160)
+)
+(connector
+	(pt -280 1192)
+	(pt -112 1192)
+)
+(connector
+	(pt -280 920)
+	(pt -280 1064)
+)
+(connector
+	(pt -280 1064)
+	(pt -280 1192)
+)
+(connector
+	(pt -408 824)
+	(pt -408 1048)
+	(bus)
+)
+(connector
+	(pt -408 1048)
+	(pt -408 1176)
+	(bus)
+)
+(connector
+	(pt -112 1176)
+	(pt -408 1176)
+	(bus)
+)
+(connector
+	(pt 104 1144)
+	(pt 416 1144)
+)
+(connector
+	(pt 416 896)
+	(pt 416 1144)
+)
+(connector
+	(pt 416 896)
+	(pt 144 896)
+)
+(connector
+	(pt 144 896)
+	(pt 144 784)
+)
+(connector
+	(pt 232 784)
+	(pt 144 784)
+)
 (junction (pt 416 120))
 (junction (pt -280 352))
 (junction (pt -408 496))
@@ -1571,3 +1753,7 @@ refer to the applicable agreement for further details.
 (junction (pt -280 880))
 (junction (pt 248 440))
 (junction (pt 192 736))
+(junction (pt -144 1016))
+(junction (pt -160 1032))
+(junction (pt -280 1064))
+(junction (pt -408 1048))

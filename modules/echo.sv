@@ -9,7 +9,10 @@ module echo(
 	output [15:0] write_address,
 	output [15:0] read_address,
 	output W_E,
-	input ADCLRCK
+	input ADCLRCK,
+	input [31:0] delay_time,
+	input [31:0] delay_volume,
+	input disabled
 	);
 	
 	logic flag = 0;
@@ -27,15 +30,27 @@ module echo(
 			flag <= 1;
 		end
 		else begin
-			write_address <= write_address + 1;
-			read_address <= read_address + 1;
-			
-			sample <= leftSampleIn + (Q >>> 1);
-			
-			leftSampleOut <= sample[15:0];
-			rightSampleOut <= sample[15:0];
-			
-			D <= sample;
+			if(disabled == 0)begin
+				if(write_address < delay_time)begin
+					write_address <= write_address + 1;
+					read_address <= read_address + 1;
+				end
+				else begin
+					write_address <= 0;
+					read_address <= 0;
+				end
+				
+				sample <= leftSampleIn + (Q >>> 1);
+				
+				leftSampleOut <= sample[15:0];
+				rightSampleOut <= sample[15:0];
+				
+				D <= sample;
+			end
+			else begin
+				leftSampleOut <= leftSampleIn;
+				rightSampleOut <= rightSampleIn;
+			end
 		end
 	end
 	
