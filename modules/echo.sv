@@ -10,8 +10,8 @@ module echo(
 	output [15:0] read_address,
 	output W_E,
 	input ADCLRCK,
-	input [31:0] delay_time,
 	input [31:0] delay_volume,
+	input [31:0] delay_time,
 	input disabled
 	);
 	
