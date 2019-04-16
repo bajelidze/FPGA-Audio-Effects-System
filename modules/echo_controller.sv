@@ -17,7 +17,7 @@ module echo_controller(
 		if(flag == 0)begin
 			flag = 1;
 			delay_time = 32767;
-			delay_volume = 64; //0-128
+			delay_volume = 1; //0-128
 		end
 		else begin
 			if(SW[5] == 1)begin	//delay
@@ -48,8 +48,8 @@ module echo_controller(
 					key3State = 1;
 				end
 				else if(key3State == 1 && key3 == 0)begin
-					if(delay_volume > 4)begin
-						delay_volume = delay_volume - 4; 
+					if(delay_volume > 1)begin
+						delay_volume = delay_volume - 1; 
 					end
 					key3State = 0;
 				end
@@ -58,8 +58,8 @@ module echo_controller(
 					key2State = 1;
 				end
 				else if(key2State == 1 && key2 == 0)begin
-					if(delay_volume < 128)begin
-						delay_volume = delay_volume + 4; 
+					if(delay_volume < 6)begin
+						delay_volume = delay_volume + 1; 
 					end
 					key2State = 0;
 				end

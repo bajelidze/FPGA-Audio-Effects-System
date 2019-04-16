@@ -41,7 +41,7 @@ module CLOCK_500(
 	always @(posedge END)begin
 		ROM[0] = 16'h0c00;	    				//power down
 		ROM[1] = 16'h0e41;	   		   	//master 0ec2
-		ROM[2] = 16'h0812;	    			 	//LINE IN: 0812, MIC IN: 0815
+		ROM[2] = 16'h0815;	    			 	//LINE IN: 0812, MIC IN: 0815
 		ROM[8] = 16'h0a06;					 	//48kHz deemphazis
 		ROM[3] = 16'h1000;					 	//mclk
 		ROM[4] = 16'h0017;

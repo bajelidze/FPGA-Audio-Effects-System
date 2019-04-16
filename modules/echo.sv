@@ -40,7 +40,7 @@ module echo(
 					read_address <= 0;
 				end
 				
-				sample <= leftSampleIn + (Q >>> 1);
+				sample <= leftSampleIn + (Q >>> delay_volume);
 				
 				leftSampleOut <= sample[15:0];
 				rightSampleOut <= sample[15:0];
