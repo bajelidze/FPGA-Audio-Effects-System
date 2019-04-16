@@ -13,6 +13,9 @@ module serializer(
 	logic [5:0] i = 31;
 	logic [5:0] t = 0;
 	logic [5:0] setupCounter = 0;
+	
+	logic signed [15:0] leftSample_Local = 0;
+	logic signed [15:0] rightSample_Local = 0;
 
 	always_ff @(negedge BCLK)begin
 		if(flag == 0)begin
@@ -37,19 +40,21 @@ module serializer(
 				else begin
 					start = 1;
 					t = 0;
+					leftSample_Local = leftSample;
+					rightSample_Local = rightSample;
 				end
 			end
 			
 			if(start == 1)begin
 				if(i >= 16)begin
-					DACDAT_SER = leftSample[i - 16];
+					DACDAT_SER = leftSample_Local[i - 16];
 					i = i - 1;
 					if(i == 15)begin
 						start = 0;
 					end
 				end
 				else if(i < 16)begin
-					DACDAT_SER = rightSample[i];
+					DACDAT_SER = rightSample_Local[i];
 					if(i != 0)begin
 						i = i - 1;
 					end
