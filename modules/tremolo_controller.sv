@@ -19,7 +19,7 @@ module tremolo_controller(
 			divisor = 2560;
 		end
 		else begin
-			if(SW[9] == 1)begin
+			if(SW[3:0] == 2)begin
 				if(key3State == 0 && key3 == 1)begin
 					key3State = 1;
 				end

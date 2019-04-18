@@ -20,7 +20,7 @@ module echo_controller(
 			delay_volume = 1; //0-128
 		end
 		else begin
-			if(SW[5] == 1)begin	//delay
+			if(SW[3:0] == 4)begin	//delay
 				if(key3State == 0 && key3 == 1)begin
 					key3State = 1;
 				end
@@ -43,7 +43,7 @@ module echo_controller(
 					key2State = 0;
 				end
 			end
-			else if(SW[4] == 1)begin	//volume
+			else if(SW[3:0] == 5)begin	//volume
 				if(key3State == 0 && key3 == 1)begin
 					key3State = 1;
 				end
@@ -65,7 +65,7 @@ module echo_controller(
 				end
 			end
 			
-			if(SW[3] == 0)begin
+			if(SW[6] == 0)begin
 				disabled = 1;
 			end
 			else begin

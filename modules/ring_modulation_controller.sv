@@ -19,7 +19,7 @@ module ring_modulation_controller(
 			frequency = 3551;
 		end
 		else begin
-			if(SW[7] == 1)begin
+			if(SW[3:0] == 3)begin
 				if(key3State == 0 && key3 == 1)begin
 					key3State = 1;
 				end
@@ -65,7 +65,7 @@ module ring_modulation_controller(
 				end
 			end
 			
-			if(SW[6] == 0)begin
+			if(SW[7] == 0)begin
 				disabled = 1;
 			end
 			else begin

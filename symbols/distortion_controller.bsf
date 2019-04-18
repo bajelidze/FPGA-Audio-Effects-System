@@ -68,9 +68,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 200 64)
 		(output)
-		(text "mode[1..0]" (rect 0 0 41 12)(font "Arial" ))
-		(text "mode[1..0]" (rect 138 59 179 71)(font "Arial" ))
-		(line (pt 200 64)(pt 184 64)(line_width 3))
+		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
+		(text "disabled" (rect 149 59 179 71)(font "Arial" ))
+		(line (pt 200 64)(pt 184 64)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 184 96)(line_width 1))

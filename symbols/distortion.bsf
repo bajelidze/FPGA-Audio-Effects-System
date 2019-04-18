@@ -54,9 +54,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 0 96)
 		(input)
-		(text "mode[1..0]" (rect 0 0 41 12)(font "Arial" ))
-		(text "mode[1..0]" (rect 21 91 62 103)(font "Arial" ))
-		(line (pt 0 96)(pt 16 96)(line_width 3))
+		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
+		(text "disabled" (rect 21 91 51 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 1))
 	)
 	(port
 		(pt 264 32)

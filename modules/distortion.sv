@@ -4,19 +4,19 @@ module distortion(
 	output signed [15:0] leftSampleOut,
 	output signed [15:0] rightSampleOut,
 	input signed [15:0] gain,		//Numerator	0-128
-	input signed [31:0] threshold,
-	input [1:0] mode //0 - OFF, 1/3 - Distortion ON, 2 - Rectifier Distortion ON
+	input signed [31:0] threshold, //20-32k, 50 default
+	input disabled
 	);
 	
 	logic signed [31:0] left_Local = 0;
 	logic signed [31:0] right_Local = 0;
 
 	always @(leftSampleIn)begin
-		if(mode == 0)begin			//OFF
+		if(disabled == 1)begin			//OFF
 			leftSampleOut = leftSampleIn;
 			rightSampleOut = rightSampleIn;
 		end
-		else if(mode == 1 || mode == 3)begin		// Distortion ON
+		else if(disabled == 0)begin		// Distortion ON
 			left_Local = leftSampleIn;
 			right_Local = rightSampleIn;
 			
@@ -86,18 +86,6 @@ module distortion(
 				else begin
 					rightSampleOut = right_Local[15:0];
 				end
-			end
-		end
-		else if(mode == 2)begin			//Rectifier Distortion ON
-			if(leftSampleIn < 0) leftSampleOut <= 0;
-			else begin
-				leftSampleOut = leftSampleIn;
-			end
-			if(rightSampleIn < 0)begin
-				rightSampleOut = 0;
-			end
-			else begin
-				rightSampleOut = rightSampleIn;
 			end
 		end
 	end

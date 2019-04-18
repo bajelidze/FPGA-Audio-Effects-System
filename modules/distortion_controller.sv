@@ -5,7 +5,7 @@ module distortion_controller(
 	input CLK,
 	output signed [15:0] gain,
 	output signed [31:0] threshold,
-	output [1:0] mode
+	output disabled
 	);
 
 	logic key3State = 1;
@@ -16,11 +16,10 @@ module distortion_controller(
 		if(flag == 0)begin
 			gain <= 1;
 			flag <= 1;
-			mode <= 0;
-			threshold <= 1000; //remove this
+			threshold <= 50; //remove this
 		end
 		else begin
-			if(mode == 1)begin
+			if(SW[3:0] == 1)begin
 				if(key3State == 0 && key3 == 1)begin
 					key3State <= 1;
 				end
@@ -41,7 +40,7 @@ module distortion_controller(
 					key2State <= 0;
 				end
 			end
-			else if(mode == 3)begin
+			else if(SW[3:0] == 0)begin
 				if(key3State == 0 && key3 == 1)begin
 					key3State <= 1;
 				end
@@ -85,17 +84,11 @@ module distortion_controller(
 				end
 			end
 			
-			if(SW[0] == 1 && SW[1] == 0)begin	//01
-				mode <= 1;
-			end
-			else if(SW[0] == 0 && SW[1] == 1)begin	//if SW9 == 0 && SW8 == 1	10
-				mode <= 2;
-			end
-			else if(SW[0] == 1 && SW[1] == 1)begin
-				mode <= 3;
+			if(SW[9] == 0)begin	//01
+				disabled <= 1;
 			end
 			else begin
-				mode <= 0;
+				disabled <= 0;
 			end
 		end
 	end
