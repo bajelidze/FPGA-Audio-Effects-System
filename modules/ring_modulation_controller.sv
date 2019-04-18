@@ -11,7 +11,6 @@ module ring_modulation_controller(
 	logic key2State = 1;
 	logic flag = 0;
 	logic [31:0] note = 440;
-	logic [31:0] mode = 1;
 	
 	always @(posedge CLK)begin	
 		if(flag == 0)begin
@@ -24,20 +23,10 @@ module ring_modulation_controller(
 					key3State = 1;
 				end
 				else if(key3State == 1 && key3 == 0)begin			
-					if(mode > 0)begin
-						mode = mode - 1;
+					if(note > 80)begin
+						note = (note * 1000) / 1059;
+						frequency = 1562500 / note;
 					end
-					
-					case(mode)
-						0 : frequency = 4111;
-						1 : frequency = 3551;
-						2 : frequency = 3255;
-						3 : frequency = 3063;
-						4 : frequency = 2367;
-						5 : frequency = 1791;
-						6 : frequency = 1751;
-						7 : frequency = 1591;
-					endcase
 					
 					key3State = 0;
 				end
@@ -46,20 +35,10 @@ module ring_modulation_controller(
 					key2State = 1;
 				end
 				else if(key2State == 1 && key2 == 0)begin			
-					if(mode < 7)begin
-						mode = mode + 1;
+					if(note < 2000)begin
+						note = (note * 1059) / 1000;
+						frequency = 1562500 / note;
 					end
-					
-					case(mode)
-						0 : frequency = 4111;
-						1 : frequency = 3551;
-						2 : frequency = 3255;
-						3 : frequency = 3063;
-						4 : frequency = 2367;
-						5 : frequency = 1791;
-						6 : frequency = 1751;
-						7 : frequency = 1591;
-					endcase
 					
 					key2State = 0;
 				end
