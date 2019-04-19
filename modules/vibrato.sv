@@ -29,7 +29,7 @@ module vibrato(
 			read_address <= 0;
 			flag <= 1;
 			
-			delay_time <= (96 * sin) >> 9;
+			delay_time <= (240 * sin) >> 9;
 		end
 		else begin
 			//if(disabled == 0)begin

@@ -9,7 +9,7 @@ module sin_generator_HD(
 	logic [31:0] counter = 0;
 	
 	always @(posedge CLK)begin	
-		if(counter < 222)begin //3551 19531 = 5Hz
+		if(counter < 19531)begin //3551 19531 = 5Hz
 			counter <= counter + 1;
 		end
 		else begin
