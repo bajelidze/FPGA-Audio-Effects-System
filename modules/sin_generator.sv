@@ -5,11 +5,8 @@ module sin_generator(
 	);
 	
 	logic [31:0] x = 0;
-	
 	logic CLK_Sin = 0;
 	logic [31:0] counter = 0;
-	
-//	assign sinOut = sin[15:0];
 	
 	always @(posedge CLK)begin	
 		if(counter < frequency)begin //3551
@@ -50,20 +47,3 @@ module sin_generator(
 		end
 	end
 endmodule
-
-//if(x <= 16)begin
-//	x2 = x * x;
-//	sin = -(x2 << 4) + (x << 3);
-//end
-//else if(x > 16 && x < 32)begin
-//	x2 = x * x;
-//	sin = (x2 << 4) - (x << 4) - (x << 3) + 8;
-//end
-//
-//if(x < 32)begin
-//	x = x + 1;
-//end
-//else begin
-//	x = 1;
-//	sin = 0;
-//end
