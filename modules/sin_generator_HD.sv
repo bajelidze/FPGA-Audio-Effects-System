@@ -283,7 +283,7 @@ module sin_generator_HD(
 		end
 		else begin
 			x <= 1;
-			sin <= 0;
+			sin <= 256;
 		end
 	end
 endmodule
