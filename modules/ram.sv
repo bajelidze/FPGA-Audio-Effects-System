@@ -7,7 +7,10 @@ module ram(
 	input CLK
 	);
 	
-	logic signed [15:0] mem [65535:0];
+	parameter WIDTH = 16;
+	parameter DEPTH = 65536;
+	
+	logic signed [WIDTH-1:0] mem [DEPTH-1:0];
 	
 	always @(posedge CLK)begin
 		if(W_E)begin

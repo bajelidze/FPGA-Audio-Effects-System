@@ -18,38 +18,46 @@ module vibrato(
 	logic flag = 0;
 	logic signed [31:0] sample = 0;
 	logic [31:0] delay_time = 0;
+	logic [31:0] prevSin = 0;
+	
+	logic [31:0] new_delay_time = 0;
 
 	always @(posedge ADCLRCK)begin
 		if(flag == 0)begin
-			D <= leftSampleIn;
-			leftSampleOut <= leftSampleIn;
-			rightSampleOut <= rightSampleIn;
-			W_E <= 1;
-			write_address <= 0;
-			read_address <= 0;
-			flag <= 1;
+			D = leftSampleIn;
+			leftSampleOut = leftSampleIn;
+			rightSampleOut = rightSampleIn;
+			W_E = 1;
+			write_address = 0;
+			read_address = 0;
+			flag = 1;
 			
-			delay_time <= (240 * sin) >> 9;
+			prevSin = sin;
+			delay_time = (240 * sin) >> 9;
 		end
 		else begin
 			//if(disabled == 0)begin
-				delay_time <= (240 * sin) >> 9;
+				if(sin != prevSin)begin
+					new_delay_time = (240 * sin) >> 9;
+				end
+				prevSin = sin;
 			
 				if(write_address < delay_time)begin
-					write_address <= write_address + 1;
-					read_address <= read_address + 1;
+					write_address = write_address + 1;
+					read_address = read_address + 1;
 				end
 				else begin
-					write_address <= 0;
-					read_address <= 0;
+					write_address = 0;
+					read_address = 0;
+					delay_time = new_delay_time;
 				end
 				
-				sample <= Q;
+				sample = Q;
 				
-				leftSampleOut <= sample[15:0];
-				rightSampleOut <= sample[15:0];
+				leftSampleOut = sample[15:0];
+				rightSampleOut = sample[15:0];
 				
-				D <= leftSampleIn;
+				D = leftSampleIn;
 //			end
 //			else begin
 //				leftSampleOut <= leftSampleIn;
