@@ -36,33 +36,27 @@ module vibrato(
 			delay_time = (240 * sin) >> 9;
 		end
 		else begin
-			//if(disabled == 0)begin
-				if(sin != prevSin)begin
-					new_delay_time = (240 * sin) >> 9;
-				end
-				prevSin = sin;
+			if(sin != prevSin)begin
+				new_delay_time = (240 * sin) >> 9;
+			end
+			prevSin = sin;
+		
+			if(write_address < delay_time)begin
+				write_address = write_address + 1;
+				read_address = read_address + 1;
+			end
+			else begin
+				write_address = 0;
+				read_address = 0;
+				delay_time = new_delay_time;
+			end
 			
-				if(write_address < delay_time)begin
-					write_address = write_address + 1;
-					read_address = read_address + 1;
-				end
-				else begin
-					write_address = 0;
-					read_address = 0;
-					delay_time = new_delay_time;
-				end
-				
-				sample = Q;
-				
-				leftSampleOut = sample[15:0];
-				rightSampleOut = sample[15:0];
-				
-				D = leftSampleIn;
-//			end
-//			else begin
-//				leftSampleOut <= leftSampleIn;
-//				rightSampleOut <= rightSampleIn;
-//			end
+			sample = Q;
+			
+			leftSampleOut = sample[15:0];
+			rightSampleOut = sample[15:0];
+			
+			D = leftSampleIn;
 		end
 	end
 	
