@@ -15,6 +15,7 @@ module decto7seg(
 	localparam [6:0] nine = 7'b0010000;
 	
 	localparam [6:0] dash = 7'b0111111;
+	localparam [6:0] off = 7'b1111111;
 	
 	always @(num)begin
 		if(num == 0) segs = zero;
@@ -27,6 +28,7 @@ module decto7seg(
 		else if(num == 7) segs = seven;
 		else if(num == 8) segs = eight;
 		else if(num == 9) segs = nine;
+		else if(num == 10) segs = off;
 		else segs = dash;
 	end
 endmodule
