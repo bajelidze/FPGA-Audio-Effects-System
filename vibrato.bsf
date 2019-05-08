@@ -59,6 +59,13 @@ refer to the applicable agreement for further details.
 		(line (pt 0 96)(pt 16 96)(line_width 3))
 	)
 	(port
+		(pt 0 112)
+		(input)
+		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
+		(text "disabled" (rect 21 107 51 119)(font "Arial" ))
+		(line (pt 0 112)(pt 16 112)(line_width 1))
+	)
+	(port
 		(pt 264 32)
 		(output)
 		(text "leftSampleOut[15..0]" (rect 0 0 79 12)(font "Arial" ))

@@ -1,7 +1,7 @@
 module sin_generator_HD(
 	input CLK,
-	output [31:0] sin
-//	input [31:0] frequency
+	output [31:0] sin,
+	input [31:0] frequency
 	);
 	
 	logic [31:0] x = 0;
@@ -9,7 +9,7 @@ module sin_generator_HD(
 	logic [31:0] counter = 0;
 	
 	always @(posedge CLK)begin	
-		if(counter < 19531)begin //3551 19531 = 5Hz
+		if(counter < frequency)begin //3551 19531 = 5Hz	(25M / 256) / (required freq. in Hz)
 			counter <= counter + 1;
 		end
 		else begin

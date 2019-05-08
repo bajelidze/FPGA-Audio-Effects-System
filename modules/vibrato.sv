@@ -10,9 +10,8 @@ module vibrato(
 	output [15:0] read_address,
 	output W_E,
 	input ADCLRCK,
-//	input disabled,
-
-	input [31:0] sin
+	input [31:0] sin,
+	input disabled
 	);
 	
 	logic flag = 0;
@@ -33,7 +32,7 @@ module vibrato(
 			flag = 1;
 			
 			prevSin = sin;
-			delay_time = (240 * sin) >> 9;
+			delay_time = (240 * sin) >> 9;	//delay_time = 48k * delay in ms => 48k * 5 ms (0.005) = 240
 		end
 		else begin
 			if(sin != prevSin)begin
