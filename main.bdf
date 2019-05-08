@@ -1006,53 +1006,32 @@ refer to the applicable agreement for further details.
 	(annotation_block (parameter)(rect 624 792 793 849))
 )
 (symbol
-	(rect -96 1240 104 1352)
-	(text "vibrato_controller" (rect 5 0 89 12)(font "Arial" ))
-	(text "inst11" (rect 8 96 36 113)(font "Intel Clear" ))
+	(rect 248 848 448 928)
+	(text "sin_generator_HD" (rect 5 0 93 12)(font "Arial" ))
+	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "key3" (rect 0 0 24 12)(font "Arial" ))
-		(text "key3" (rect 21 27 45 39)(font "Arial" ))
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "key2" (rect 0 0 24 12)(font "Arial" ))
-		(text "key2" (rect 21 43 45 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "SW[9..0]" (rect 0 0 43 12)(font "Arial" ))
-		(text "SW[9..0]" (rect 21 59 64 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64)(line_width 3))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80))
+		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 21 43 103 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48)(line_width 3))
 	)
 	(port
 		(pt 200 32)
 		(output)
-		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
-		(text "disabled" (rect 146 27 186 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32))
-	)
-	(port
-		(pt 200 48)
-		(output)
-		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "frequency[31..0]" (rect 110 43 192 55)(font "Arial" ))
-		(line (pt 200 48)(pt 184 48)(line_width 3))
+		(text "sin[31..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "sin[31..0]" (rect 141 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 184 96))
+		(rectangle (rect 16 16 184 64))
 	)
 )
 (symbol
@@ -1148,32 +1127,53 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 248 848 448 928)
-	(text "sin_generator_HD" (rect 5 0 93 12)(font "Arial" ))
-	(text "inst10" (rect 8 64 37 76)(font "Arial" ))
+	(rect -96 1240 104 1352)
+	(text "vibrato_controller" (rect 5 0 89 12)(font "Arial" ))
+	(text "inst11" (rect 8 96 37 108)(font "Arial" ))
 	(port
 		(pt 0 32)
 		(input)
-		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
-		(text "CLK" (rect 21 27 42 39)(font "Arial" ))
+		(text "key3" (rect 0 0 24 12)(font "Arial" ))
+		(text "key3" (rect 21 27 45 39)(font "Arial" ))
 		(line (pt 0 32)(pt 16 32))
 	)
 	(port
 		(pt 0 48)
 		(input)
-		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
-		(text "frequency[31..0]" (rect 21 43 103 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48)(line_width 3))
+		(text "key2" (rect 0 0 24 12)(font "Arial" ))
+		(text "key2" (rect 21 43 45 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "SW[9..0]" (rect 0 0 43 12)(font "Arial" ))
+		(text "SW[9..0]" (rect 21 59 64 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "CLK" (rect 0 0 21 12)(font "Arial" ))
+		(text "CLK" (rect 21 75 42 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
 	)
 	(port
 		(pt 200 32)
 		(output)
-		(text "sin[31..0]" (rect 0 0 46 12)(font "Arial" ))
-		(text "sin[31..0]" (rect 141 27 179 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32)(line_width 3))
+		(text "disabled" (rect 0 0 40 12)(font "Arial" ))
+		(text "disabled" (rect 146 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32))
+	)
+	(port
+		(pt 200 48)
+		(output)
+		(text "frequency[31..0]" (rect 0 0 82 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 110 43 179 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48)(line_width 3))
 	)
 	(drawing
-		(rectangle (rect 16 16 184 64))
+		(rectangle (rect 16 16 184 96))
 	)
 )
 (connector
@@ -1688,11 +1688,6 @@ refer to the applicable agreement for further details.
 	(pt 136 1008)
 )
 (connector
-	(pt 224 768)
-	(pt 224 712)
-	(bus)
-)
-(connector
 	(pt 224 712)
 	(pt 240 712)
 	(bus)
@@ -1799,29 +1794,8 @@ refer to the applicable agreement for further details.
 	(pt 128 720)
 )
 (connector
-	(pt 216 696)
-	(pt 216 720)
-)
-(connector
-	(pt 216 720)
-	(pt 216 776)
-)
-(connector
-	(pt 216 776)
-	(pt 512 776)
-)
-(connector
-	(pt 512 744)
-	(pt 512 776)
-)
-(connector
 	(pt 512 744)
 	(pt 608 744)
-)
-(connector
-	(pt 224 768)
-	(pt 456 768)
-	(bus)
 )
 (connector
 	(pt 128 720)
@@ -1836,21 +1810,8 @@ refer to the applicable agreement for further details.
 	(pt 168 1272)
 )
 (connector
-	(pt 168 728)
-	(pt 168 1272)
-)
-(connector
-	(pt 168 728)
-	(pt 240 728)
-)
-(connector
 	(pt 184 1288)
 	(pt 104 1288)
-	(bus)
-)
-(connector
-	(pt 456 768)
-	(pt 456 880)
 	(bus)
 )
 (connector
@@ -1922,6 +1883,45 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -280 1192)
 	(pt -280 1320)
+)
+(connector
+	(pt 216 808)
+	(pt 512 808)
+)
+(connector
+	(pt 512 744)
+	(pt 512 808)
+)
+(connector
+	(pt 216 696)
+	(pt 216 720)
+)
+(connector
+	(pt 216 720)
+	(pt 216 808)
+)
+(connector
+	(pt 224 712)
+	(pt 224 800)
+	(bus)
+)
+(connector
+	(pt 224 800)
+	(pt 456 800)
+	(bus)
+)
+(connector
+	(pt 456 880)
+	(pt 456 800)
+	(bus)
+)
+(connector
+	(pt 168 1272)
+	(pt 168 728)
+)
+(connector
+	(pt 168 728)
+	(pt 240 728)
 )
 (junction (pt 416 120))
 (junction (pt -280 352))

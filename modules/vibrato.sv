@@ -11,6 +11,7 @@ module vibrato(
 	output W_E,
 	input ADCLRCK,
 	input [31:0] sin,
+//	input [31:0] delay_ms,
 	input disabled
 	);
 	
@@ -35,27 +36,33 @@ module vibrato(
 			delay_time = (240 * sin) >> 9;	//delay_time = 48k * delay in ms => 48k * 5 ms (0.005) = 240
 		end
 		else begin
-			if(sin != prevSin)begin
-				new_delay_time = (240 * sin) >> 9;
-			end
-			prevSin = sin;
-		
-			if(write_address < delay_time)begin
-				write_address = write_address + 1;
-				read_address = read_address + 1;
+			if(disabled == 0)begin
+				if(sin != prevSin)begin
+					new_delay_time = (240 * sin) >> 9;
+				end
+				prevSin = sin;
+			
+				if(write_address < delay_time)begin
+					write_address = write_address + 1;
+					read_address = read_address + 1;
+				end
+				else begin
+					write_address = 0;
+					read_address = 0;
+					delay_time = new_delay_time;
+				end
+				
+				sample = Q;
+				
+				leftSampleOut = sample[15:0];
+				rightSampleOut = sample[15:0];
+				
+				D = leftSampleIn;
 			end
 			else begin
-				write_address = 0;
-				read_address = 0;
-				delay_time = new_delay_time;
+				leftSampleOut = leftSampleIn;
+				rightSampleOut = rightSampleIn;
 			end
-			
-			sample = Q;
-			
-			leftSampleOut = sample[15:0];
-			rightSampleOut = sample[15:0];
-			
-			D = leftSampleIn;
 		end
 	end
 	

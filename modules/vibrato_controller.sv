@@ -5,6 +5,7 @@ module vibrato_controller(
 	input CLK,
 	output disabled,
 	output [31:0] frequency
+//	output [31:0] delay_ms
 	);
 	
 	logic key3State = 1;
@@ -12,11 +13,14 @@ module vibrato_controller(
 	logic flag = 0;
 	
 	logic [31:0] freq_Hz = 5;
+//	logic [31:0] delay_ms_2 = 5;
 	
 	always @(posedge CLK)begin
 		if(flag == 0)begin
 			flag = 1;
 			frequency = 19531;
+			disabled = 0;
+//			delay_ms = 240;
 		end
 		else begin
 			if(SW[3:0] == 6)begin	// Frequency of LFO 1-10 Hz, 1 Hz step
@@ -42,23 +46,29 @@ module vibrato_controller(
 					key2State = 0;
 				end
 			end
-			else if(SW[3:0] == 7)begin	// Max phase shift
-				if(key3State == 0 && key3 == 1)begin
-					key3State = 1;
-				end
-				else if(key3State == 1 && key3 == 0)begin
-					//here
-					key3State = 0;
-				end
-				
-				if(key2State == 0 && key2 == 1)begin
-					key2State = 1;
-				end
-				else if(key2State == 1 && key2 == 0)begin
-					//here
-					key2State = 0;
-				end
-			end
+//			else if(SW[3:0] == 7)begin	// Max phase shift
+//				if(key3State == 0 && key3 == 1)begin
+//					key3State = 1;
+//				end
+//				else if(key3State == 1 && key3 == 0)begin
+//					if(delay_ms_2 > 5)begin
+//						delay_ms_2 = delay_ms_2 - 1;
+//						delay_ms = (48000 * delay_ms_2) / 1000;
+//					end
+//					key3State = 0;
+//				end
+//				
+//				if(key2State == 0 && key2 == 1)begin
+//					key2State = 1;
+//				end
+//				else if(key2State == 1 && key2 == 0)begin
+//					if(delay_ms_2 < 10)begin
+//						delay_ms_2 = delay_ms_2 + 1;
+//						delay_ms = (48000 * delay_ms_2) / 1000;
+//					end
+//					key2State = 0;
+//				end
+//			end
 			
 			if(SW[5] == 0)begin
 				disabled = 1;
