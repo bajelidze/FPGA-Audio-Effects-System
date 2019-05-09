@@ -3,9 +3,9 @@ module echo_controller(
 	input key2,
 	input [9:0] SW,
 	input CLK,
-	output disabled,
+	output [31:0] delay_time,
 	output [31:0] delay_volume,
-	output [31:0] delay_time
+	output disabled
 	);
 	
 	logic key3State = 1;
