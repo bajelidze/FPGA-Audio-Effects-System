@@ -54,16 +54,16 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 200 32)
 		(output)
-		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
-		(text "disabled" (rect 149 27 179 39)(font "Arial" ))
-		(line (pt 200 32)(pt 184 32)(line_width 1))
+		(text "frequency[31..0]" (rect 0 0 64 12)(font "Arial" ))
+		(text "frequency[31..0]" (rect 115 27 179 39)(font "Arial" ))
+		(line (pt 200 32)(pt 184 32)(line_width 3))
 	)
 	(port
 		(pt 200 48)
 		(output)
-		(text "frequency[31..0]" (rect 0 0 64 12)(font "Arial" ))
-		(text "frequency[31..0]" (rect 115 43 179 55)(font "Arial" ))
-		(line (pt 200 48)(pt 184 48)(line_width 3))
+		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
+		(text "disabled" (rect 149 43 179 55)(font "Arial" ))
+		(line (pt 200 48)(pt 184 48)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 184 96)(line_width 1))

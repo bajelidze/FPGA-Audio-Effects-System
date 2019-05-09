@@ -65,7 +65,18 @@ refer to the applicable agreement for further details.
 		(text "Q[15..0]" (rect 157 27 187 39)(font "Arial" ))
 		(line (pt 208 32)(pt 192 32)(line_width 3))
 	)
+	(parameter
+		"WIDTH"
+		"16"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
+	(parameter
+		"DEPTH"
+		"65536"
+		""
+		(type "PARAMETER_SIGNED_DEC")	)
 	(drawing
 		(rectangle (rect 16 16 192 128)(line_width 1))
 	)
+	(annotation_block (parameter)(rect 224 -64 324 16))
 )

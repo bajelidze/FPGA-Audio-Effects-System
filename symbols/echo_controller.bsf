@@ -54,9 +54,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 216 32)
 		(output)
-		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
-		(text "disabled" (rect 165 27 195 39)(font "Arial" ))
-		(line (pt 216 32)(pt 200 32)(line_width 1))
+		(text "delay_time[31..0]" (rect 0 0 67 12)(font "Arial" ))
+		(text "delay_time[31..0]" (rect 128 27 195 39)(font "Arial" ))
+		(line (pt 216 32)(pt 200 32)(line_width 3))
 	)
 	(port
 		(pt 216 48)
@@ -68,9 +68,9 @@ refer to the applicable agreement for further details.
 	(port
 		(pt 216 64)
 		(output)
-		(text "delay_time[31..0]" (rect 0 0 67 12)(font "Arial" ))
-		(text "delay_time[31..0]" (rect 128 59 195 71)(font "Arial" ))
-		(line (pt 216 64)(pt 200 64)(line_width 3))
+		(text "disabled" (rect 0 0 30 12)(font "Arial" ))
+		(text "disabled" (rect 165 59 195 71)(font "Arial" ))
+		(line (pt 216 64)(pt 200 64)(line_width 1))
 	)
 	(drawing
 		(rectangle (rect 16 16 200 96)(line_width 1))
